@@ -28,6 +28,21 @@ class OpenTicket {
     codocop,
     codcatoco
   }) {
+    const obj = {
+      codcli,
+      codsercli,
+      ...(codcar && {
+        codcar
+      }),
+      ...(codusu_d && {
+        codusu_d
+      }),
+      codmvis: 'PROBLEMA',
+      descri_oco,
+      codusu,
+      codocop,
+      codcatoco
+    };
     const {
       data
     } = await this.integrator.Datasource.criarAtendimento({
@@ -45,6 +60,7 @@ class OpenTicket {
       codocop,
       codcatoco
     });
+    console.log(obj);
     const {
       error,
       exception

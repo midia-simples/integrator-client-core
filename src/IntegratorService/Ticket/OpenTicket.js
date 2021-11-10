@@ -10,17 +10,31 @@ class OpenTicket {
   async run({
     codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
   }) {
+    const obj = {
+      codcli,
+      codsercli,
+      ...(codcar && { codcar }),
+      ...(codusu_d && { codusu_d }),
+      codmvis: 'PROBLEMA',
+      descri_oco,
+      codusu,
+      codocop,
+      codcatoco,
+    }
+
     const { data } = await this.integrator.Datasource.criarAtendimento({
       codcli,
       codsercli,
       ...(codcar && { codcar }),
-      ...(codusu_d && { codusu_d}),
+      ...(codusu_d && { codusu_d }),
       codmvis: 'PROBLEMA',
       descri_oco,
       codusu,
       codocop,
       codcatoco,
     });
+
+    console.log(obj);
 
     const { error, exception } = data;
 
