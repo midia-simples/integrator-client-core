@@ -41,7 +41,7 @@ var _PlanIsAvailable = _interopRequireDefault(require("./PlanProvisional/PlanIsA
 
 var _EnablePlanProvisional = _interopRequireDefault(require("./PlanProvisional/EnablePlanProvisional"));
 
-var _ChangePaymentMethod = _interopRequireDefault(require("./Ticket/ChangePaymentMethod"));
+var _OpenTicket = _interopRequireDefault(require("./Ticket/OpenTicket"));
 
 var _ShowAllPlans = _interopRequireDefault(require("./Plan/ShowAllPlans"));
 
@@ -65,7 +65,7 @@ var _default = {
   ChangeDueDate: _ChangeDueDate.default,
   PlanIsAvailable: _PlanIsAvailable.default,
   EnablePlanProvisional: _EnablePlanProvisional.default,
-  ChangePaymentMethod: _ChangePaymentMethod.default,
+  OpenTicket: _OpenTicket.default,
   ShowAllPlans: _ShowAllPlans.default,
   RetrieveEmails: _RetrieveEmails.default
 };
