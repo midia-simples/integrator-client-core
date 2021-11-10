@@ -10,18 +10,6 @@ class OpenTicket {
   async run({
     codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
   }) {
-    const obj = {
-      codcli,
-      codsercli,
-      ...(codcar && { codcar }),
-      ...(codusu_d && { codusu_d }),
-      codmvis: 'PROBLEMA',
-      descri_oco,
-      codusu,
-      codocop,
-      codcatoco,
-    }
-
     const { data } = await this.integrator.Datasource.criarAtendimento({
       codcli,
       codsercli,
@@ -34,17 +22,12 @@ class OpenTicket {
       codcatoco,
     });
 
-    console.log(obj);
-
-    const { error, exception } = data;
-
     if (error) {
       throw new ServiceError(400, exception);
     } else if (
       (typeof data === 'string' && !isJSON(data))
       || !data.data.results
     ) {
-      console.log(data);
       throw new ServiceError(400, 'Não foi possível abrir um atendimento');
     }
 
