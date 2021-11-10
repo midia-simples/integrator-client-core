@@ -26,6 +26,8 @@ class OpenTicket {
 
     const { error, exception } = data;
 
+    console.log(error, exception);
+
     if (error) {
       throw new ServiceError(400, exception);
     } else if (

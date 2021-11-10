@@ -42,6 +42,7 @@ class OpenTicket {
       error,
       exception
     } = data;
+    console.log(error, exception);
 
     if (error) {
       throw new _ServiceError.default(400, exception);
