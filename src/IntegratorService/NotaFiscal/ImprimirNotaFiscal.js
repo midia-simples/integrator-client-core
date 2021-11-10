@@ -14,7 +14,7 @@ class ImprimirNotaFiscal {
     });
 
     if (data.data) {
-      const { host } config.getConfig();
+      const { host } = config.getConfig();
 
       const url = `${host}/${data.data.results[0].link}`;
       return renderPDF(url);
