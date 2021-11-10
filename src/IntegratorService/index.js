@@ -25,7 +25,7 @@ import ChangeDueDate from './Ticket/ChangeDueDate';
 import PlanIsAvailable from './PlanProvisional/PlanIsAvailable';
 import EnablePlanProvisional from './PlanProvisional/EnablePlanProvisional';
 
-import ChangePaymentMethod from './Ticket/ChangePaymentMethod';
+import OpenTicket from './Ticket/OpenTicket';
 
 import ShowAllPlans from './Plan/ShowAllPlans';
 
@@ -47,7 +47,7 @@ export default {
   ChangeDueDate,
   PlanIsAvailable,
   EnablePlanProvisional,
-  ChangePaymentMethod,
+  OpenTicket,
   ShowAllPlans,
   RetrieveEmails,
 };
