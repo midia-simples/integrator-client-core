@@ -7,6 +7,7 @@ exports.default = void 0;
 const config = {};
 
 function setConfig({
+  host,
   url,
   user,
   pass,
@@ -14,6 +15,7 @@ function setConfig({
   viewStatus
 }) {
   config.url = url;
+  config.host = host;
   config.user = user;
   config.pass = pass;
   config.viewLogin = viewLogin;

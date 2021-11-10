@@ -9,6 +9,8 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _renderPDF = _interopRequireDefault(require("../../util/renderPDF"));
 
+var _config = _interopRequireDefault(require("../../config"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ImprimirNotaFiscal {
@@ -28,7 +30,11 @@ class ImprimirNotaFiscal {
     });
 
     if (data.data) {
-      const url = `${process.env.API_INTEGRATOR_HOST_NAME}/${data.data.results[0].link}`;
+      const {
+        host
+      } = _config.default.getConfig();
+
+      const url = `${host}/${data.data.results[0].link}`;
       return (0, _renderPDF.default)(url);
     }
 

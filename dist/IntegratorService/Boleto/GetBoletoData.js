@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
+var _config = _interopRequireDefault(require("../../config"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetBoletoData {
@@ -25,9 +27,14 @@ class GetBoletoData {
     });
     const resultsDownload = responseDownload.data.data.results;
     const resultsLinha = linhaDigitavel.data.data.results;
+
+    const {
+      host
+    } = _config.default.getConfig();
+
     return {
       linha: resultsLinha[0].codigo_barras,
-      download: `${process.env.API_INTEGRATOR_HOST_NAME}/${resultsDownload[0].linkBoleto}`
+      download: `${host}/${resultsDownload[0].linkBoleto}`
     };
   }
 
