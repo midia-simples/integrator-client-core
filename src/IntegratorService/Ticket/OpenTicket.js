@@ -8,15 +8,13 @@ class OpenTicket {
   }
 
   async run({
-    codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
+    codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
   }) {
     const { data } = await this.integrator.Datasource.criarAtendimento({
       codcli,
       codsercli,
-      codcar:
-        process.env.NODE_ENV === 'development'
-          ? process.env.API_INTEGRATOR_CODCAR_TESTE
-          : process.env.API_INTEGRATOR_CODCAR_FINANCEIRO,
+      ...(codcar && { codcar }),
+      ...(codusu_d && { codusu_d}),
       codmvis: 'PROBLEMA',
       descri_oco,
       codusu,
@@ -32,7 +30,6 @@ class OpenTicket {
       (typeof data === 'string' && !isJSON(data))
       || !data.data.results
     ) {
-      console.log(data);
       throw new ServiceError(400, 'Não foi possível abrir um atendimento');
     }
 
