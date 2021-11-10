@@ -1,5 +1,6 @@
 import Integrator from '~/API/Integrator';
 import renderPDF from '~/util/renderPDF';
+import config from '~/config';
 
 class ImprimirNotaFiscal {
   constructor() {
@@ -13,7 +14,9 @@ class ImprimirNotaFiscal {
     });
 
     if (data.data) {
-      const url = `${process.env.API_INTEGRATOR_HOST_NAME}/${data.data.results[0].link}`;
+      const { host } config.getConfig();
+
+      const url = `${host}/${data.data.results[0].link}`;
       return renderPDF(url);
     }
 

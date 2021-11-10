@@ -1,4 +1,5 @@
 import Integrator from '~/API/Integrator';
+import config from '~/config';
 
 class GetBoletoData {
   constructor() {
@@ -16,9 +17,11 @@ class GetBoletoData {
     const resultsDownload = responseDownload.data.data.results;
     const resultsLinha = linhaDigitavel.data.data.results;
 
+    const { host } = config.getConfig();
+
     return {
       linha: resultsLinha[0].codigo_barras,
-      download: `${process.env.API_INTEGRATOR_HOST_NAME}/${resultsDownload[0].linkBoleto}`,
+      download: `${host}/${resultsDownload[0].linkBoleto}`,
     };
   }
 }
