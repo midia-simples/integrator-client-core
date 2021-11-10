@@ -69,6 +69,7 @@ class OpenTicket {
     if (error) {
       throw new _ServiceError.default(400, exception);
     } else if (typeof data === 'string' && !(0, _isJSON.default)(data) || !data.data.results) {
+      console.log(data);
       throw new _ServiceError.default(400, 'Não foi possível abrir um atendimento');
     }
 
