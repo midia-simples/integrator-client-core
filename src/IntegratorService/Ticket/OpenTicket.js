@@ -22,6 +22,8 @@ class OpenTicket {
       codcatoco,
     });
 
+    const { error, exception } = data;
+
     if (error) {
       throw new ServiceError(400, exception);
     } else if (

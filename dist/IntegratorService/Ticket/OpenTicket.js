@@ -45,6 +45,10 @@ class OpenTicket {
       codocop,
       codcatoco
     });
+    const {
+      error,
+      exception
+    } = data;
 
     if (error) {
       throw new _ServiceError.default(400, exception);

@@ -37,7 +37,6 @@ class GetPasswordCustomer {
     const response = await this.integrator.View.execute(params);
 
     if (response && !response.data.error) {
-      console.log(response);
       const {
         SenhaCentral
       } = response.data.data.results[0];
