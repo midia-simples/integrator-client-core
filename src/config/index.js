@@ -1,6 +1,8 @@
 const config = {};
 
-function setConfig({ host, url, user, pass, viewLogin, viewStatus }) {
+function setConfig({
+  host, url, user, pass, viewLogin, viewStatus,
+}) {
   config.url = url;
   config.host = host;
   config.user = user;
