@@ -20,8 +20,6 @@ import ListActiveServices from './Service/ListActiveServices';
 import ListLogins from './SAP/ListLogins';
 import GetConnectionExtract from './SAP/GetConnectionExtract';
 
-import ChangeDueDate from './Ticket/ChangeDueDate';
-
 import PlanIsAvailable from './PlanProvisional/PlanIsAvailable';
 import EnablePlanProvisional from './PlanProvisional/EnablePlanProvisional';
 
@@ -44,7 +42,6 @@ export default {
   ListActiveServices,
   ListLogins,
   GetConnectionExtract,
-  ChangeDueDate,
   PlanIsAvailable,
   EnablePlanProvisional,
   OpenTicket,
