@@ -35,8 +35,6 @@ var _ListLogins = _interopRequireDefault(require("./SAP/ListLogins"));
 
 var _GetConnectionExtract = _interopRequireDefault(require("./SAP/GetConnectionExtract"));
 
-var _ChangeDueDate = _interopRequireDefault(require("./Ticket/ChangeDueDate"));
-
 var _PlanIsAvailable = _interopRequireDefault(require("./PlanProvisional/PlanIsAvailable"));
 
 var _EnablePlanProvisional = _interopRequireDefault(require("./PlanProvisional/EnablePlanProvisional"));
@@ -62,7 +60,6 @@ var _default = {
   ListActiveServices: _ListActiveServices.default,
   ListLogins: _ListLogins.default,
   GetConnectionExtract: _GetConnectionExtract.default,
-  ChangeDueDate: _ChangeDueDate.default,
   PlanIsAvailable: _PlanIsAvailable.default,
   EnablePlanProvisional: _EnablePlanProvisional.default,
   OpenTicket: _OpenTicket.default,
