@@ -5,10 +5,6 @@ import { removeNotNumbers } from '~/util/removeNotNumbers';
 import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class GetPasswordCustomer {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ document }) {
     const documentHandle = removeNotNumbers(document);
 
@@ -23,7 +19,7 @@ class GetPasswordCustomer {
         : cnpjMask(documentHandle),
     };
 
-    const response = await this.integrator.View.execute(params);
+    const response = await Integrator.View.execute(params);
 
     if (response && !response.data.error) {
       const { SenhaCentral } = response.data.data.results[0];

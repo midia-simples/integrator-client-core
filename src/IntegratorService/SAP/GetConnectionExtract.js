@@ -1,14 +1,10 @@
 import Integrator from '~/API/Integrator';
 
 class GetConnectionExtract {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({
     codcli, codsercli, login, data_ini, data_fim,
   }) {
-    const { data } = await this.integrator.ConnectionExtract.list({
+    const { data } = await Integrator.ConnectionExtract.list({
       codcli,
       codsercli,
       login,

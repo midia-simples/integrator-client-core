@@ -52,5 +52,6 @@ class Datasource extends _Resource.default {
 
 }
 
-var _default = Datasource;
+var _default = new Datasource();
+
 exports.default = _default;

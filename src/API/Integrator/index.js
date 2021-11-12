@@ -13,22 +13,19 @@ import AuthorizationLogin from './resources/AuthorizationLogin';
 import ConnectionExtract from './resources/ConnectionExtract';
 import Service from './resources/Service';
 
-class Integrator {
-  constructor() {
-    this.Bill = new Bill();
-    this.NotaFiscal = new NotaFiscal();
-    this.Customer = new Customer();
-    this.Contact = new Contact();
-    this.Provisional = new Provisional();
-    this.Datasource = new Datasource();
-    this.View = new View();
-    this.DueDate = new DueDate();
-    this.PaymentMethods = new PaymentMethods();
-    this.Attendence = new Attendence();
-    this.Ged = new Ged();
-    this.AuthorizationLogin = new AuthorizationLogin();
-    this.ConnectionExtract = new ConnectionExtract();
-    this.Service = new Service();
-  }
-}
-export default Integrator;
+export default {
+  Bill,
+  NotaFiscal,
+  Customer,
+  Contact,
+  Provisional,
+  Datasource,
+  View,
+  DueDate,
+  PaymentMethods,
+  Attendence,
+  Ged,
+  AuthorizationLogin,
+  ConnectionExtract,
+  Service,
+};

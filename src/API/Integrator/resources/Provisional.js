@@ -10,4 +10,4 @@ class Provisional extends Resource {
   }
 }
 
-export default Provisional;
+export default new Provisional();

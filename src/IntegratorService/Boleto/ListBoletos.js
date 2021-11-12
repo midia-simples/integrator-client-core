@@ -3,10 +3,6 @@ import Integrator from '~/API/Integrator';
 import dateToBR from '~/util/dateToBR';
 
 class ListBoletos {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli }) {
     const todayPlusYears = addYears(new Date(), 2);
     const twoYearAgo = subYears(new Date(), 2);
@@ -14,7 +10,7 @@ class ListBoletos {
     const todayBR = dateToBR(todayPlusYears);
     const twoYearAgoBR = dateToBR(twoYearAgo);
 
-    const { data } = await this.integrator.Bill.list({
+    const { data } = await Integrator.Bill.list({
       codcli,
       from: twoYearAgoBR,
       to: todayBR,

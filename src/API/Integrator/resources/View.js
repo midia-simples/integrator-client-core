@@ -6,4 +6,4 @@ class View extends Resource {
   }
 }
 
-export default View;
+export default new View();

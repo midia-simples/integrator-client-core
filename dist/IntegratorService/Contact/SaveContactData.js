@@ -12,10 +12,6 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class SaveContactData {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli,
     e_mail,
@@ -23,7 +19,7 @@ class SaveContactData {
   }) {
     const {
       data: contactsList
-    } = await this.integrator.Contact.list({
+    } = await _Integrator.default.Contact.list({
       codcli
     });
 
@@ -31,7 +27,7 @@ class SaveContactData {
       const {
         codco_cl
       } = contactsList.data.results[0];
-      await this.integrator.Datasource.salvarContatoCliente({
+      await _Integrator.default.Datasource.salvarContatoCliente({
         codco_cl,
         e_mail,
         celular

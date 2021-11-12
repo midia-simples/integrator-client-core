@@ -16,5 +16,6 @@ class AuthorizationLogin extends _Resource.default {
 
 }
 
-var _default = AuthorizationLogin;
+var _default = new AuthorizationLogin();
+
 exports.default = _default;

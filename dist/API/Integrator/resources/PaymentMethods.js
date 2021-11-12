@@ -16,5 +16,6 @@ class PaymentMethods extends _Resource.default {
 
 }
 
-var _default = PaymentMethods;
+var _default = new PaymentMethods();
+
 exports.default = _default;

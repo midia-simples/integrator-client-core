@@ -2,14 +2,10 @@ import Integrator from '~/API/Integrator';
 import GetServiceDetails from './GetServiceDetails';
 
 class ListActiveServices {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli, statusQuery }) {
     const { getEqual, text } = statusQuery || {};
 
-    const { data } = await this.integrator.Service.list({ codcli });
+    const { data } = await Integrator.Service.list({ codcli });
     if (data.data) {
       const list = data.data.results;
 

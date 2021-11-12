@@ -6,4 +6,4 @@ class PaymentMethods extends Resource {
   }
 }
 
-export default PaymentMethods;
+export default new PaymentMethods();
