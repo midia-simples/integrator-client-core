@@ -29,5 +29,6 @@ class Provisional extends _Resource.default {
 
 }
 
-var _default = Provisional;
+var _default = new Provisional();
+
 exports.default = _default;

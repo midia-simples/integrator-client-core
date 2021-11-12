@@ -18,10 +18,6 @@ var _GetPasswordCustomer = _interopRequireDefault(require("./GetPasswordCustomer
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ChangePassword {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     document,
     password: senha
@@ -33,7 +29,7 @@ class ChangePassword {
       document
     });
     const documentIsCpf = documentNum.length === 11;
-    const response = await this.integrator.Customer.changePassword({
+    const response = await _Integrator.default.Customer.changePassword({
       senha_ant,
       senha,
       tipoPessoa: documentIsCpf ? 'F' : 'J',

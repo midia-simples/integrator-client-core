@@ -6,4 +6,4 @@ class Contacts extends Resource {
   }
 }
 
-export default Contacts;
+export default new Contacts();

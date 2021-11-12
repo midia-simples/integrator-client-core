@@ -16,5 +16,6 @@ class Contacts extends _Resource.default {
 
 }
 
-var _default = Contacts;
+var _default = new Contacts();
+
 exports.default = _default;

@@ -6,4 +6,4 @@ class AuthorizationLogin extends Resource {
   }
 }
 
-export default AuthorizationLogin;
+export default new AuthorizationLogin();

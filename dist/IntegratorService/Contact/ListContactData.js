@@ -12,16 +12,12 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListContactData {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli
   }) {
     const {
       data: contactsList
-    } = await this.integrator.Contact.list({
+    } = await _Integrator.default.Contact.list({
       codcli
     });
 

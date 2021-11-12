@@ -16,5 +16,6 @@ class DueDate extends _Resource.default {
 
 }
 
-var _default = DueDate;
+var _default = new DueDate();
+
 exports.default = _default;

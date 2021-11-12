@@ -14,10 +14,6 @@ var _documentMasks = require("../../util/documentMasks");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ShowCustomer {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     document
   }) {
@@ -26,7 +22,7 @@ class ShowCustomer {
     const data = {
       [documentIsCpf ? 'cpf' : 'cnpj']: [documentIsCpf ? (0, _documentMasks.cpfMask)(documentNum) : (0, _documentMasks.cnpjMask)(documentNum)]
     };
-    const result = await this.integrator.Customer.exists(data);
+    const result = await _Integrator.default.Customer.exists(data);
     return result;
   }
 

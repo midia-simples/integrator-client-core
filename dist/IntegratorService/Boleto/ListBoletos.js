@@ -14,10 +14,6 @@ var _dateToBR = _interopRequireDefault(require("../../util/dateToBR"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListBoletos {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli
   }) {
@@ -27,7 +23,7 @@ class ListBoletos {
     const twoYearAgoBR = (0, _dateToBR.default)(twoYearAgo);
     const {
       data
-    } = await this.integrator.Bill.list({
+    } = await _Integrator.default.Bill.list({
       codcli,
       from: twoYearAgoBR,
       to: todayBR

@@ -16,5 +16,6 @@ class Ged extends _Resource.default {
 
 }
 
-var _default = Ged;
+var _default = new Ged();
+
 exports.default = _default;

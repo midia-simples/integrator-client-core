@@ -20,5 +20,6 @@ class Service extends _Resource.default {
 
 }
 
-var _default = Service;
+var _default = new Service();
+
 exports.default = _default;

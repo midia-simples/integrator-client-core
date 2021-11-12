@@ -35,25 +35,20 @@ var _Service = _interopRequireDefault(require("./resources/Service"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class Integrator {
-  constructor() {
-    this.Bill = new _Bill.default();
-    this.NotaFiscal = new _NotaFiscal.default();
-    this.Customer = new _Customer.default();
-    this.Contact = new _Contact.default();
-    this.Provisional = new _Provisional.default();
-    this.Datasource = new _Datasource.default();
-    this.View = new _View.default();
-    this.DueDate = new _DueDate.default();
-    this.PaymentMethods = new _PaymentMethods.default();
-    this.Attendence = new _Attendence.default();
-    this.Ged = new _Ged.default();
-    this.AuthorizationLogin = new _AuthorizationLogin.default();
-    this.ConnectionExtract = new _ConnectionExtract.default();
-    this.Service = new _Service.default();
-  }
-
-}
-
-var _default = Integrator;
+var _default = {
+  Bill: _Bill.default,
+  NotaFiscal: _NotaFiscal.default,
+  Customer: _Customer.default,
+  Contact: _Contact.default,
+  Provisional: _Provisional.default,
+  Datasource: _Datasource.default,
+  View: _View.default,
+  DueDate: _DueDate.default,
+  PaymentMethods: _PaymentMethods.default,
+  Attendence: _Attendence.default,
+  Ged: _Ged.default,
+  AuthorizationLogin: _AuthorizationLogin.default,
+  ConnectionExtract: _ConnectionExtract.default,
+  Service: _Service.default
+};
 exports.default = _default;

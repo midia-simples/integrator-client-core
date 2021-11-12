@@ -14,10 +14,6 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class OpenTicket {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcar,
     codusu_d,
@@ -30,7 +26,7 @@ class OpenTicket {
   }) {
     const {
       data
-    } = await this.integrator.Datasource.criarAtendimento({
+    } = await _Integrator.default.Datasource.criarAtendimento({
       codcli,
       codsercli,
       ...(codcar && {

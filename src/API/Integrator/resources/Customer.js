@@ -18,4 +18,4 @@ class Customer extends Resource {
   }
 }
 
-export default Customer;
+export default new Customer();

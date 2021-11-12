@@ -16,5 +16,6 @@ class Attendence extends _Resource.default {
 
 }
 
-var _default = Attendence;
+var _default = new Attendence();
+
 exports.default = _default;

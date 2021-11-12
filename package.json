@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='node_modules'",
-    "build": "babel src --out-dir dist",
+    "build": "babel --presets='@babel/preset-env' src --out-dir dist",
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
     "dev": "nodemon --exec yarn babel-node src/server.js",

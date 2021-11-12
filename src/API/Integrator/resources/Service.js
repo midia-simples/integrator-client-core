@@ -10,4 +10,4 @@ class Service extends Resource {
   }
 }
 
-export default Service;
+export default new Service();

@@ -14,10 +14,6 @@ var _documentMasks = require("../../util/documentMasks");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ShowAllPlans {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     document
   }) {
@@ -27,7 +23,7 @@ class ShowAllPlans {
       _consulta: '012I0L9WDV',
       [documentIsCpf ? 'cpf' : 'cnpj']: [documentIsCpf ? (0, _documentMasks.cpfMask)(documentHandle) : (0, _documentMasks.cnpjMask)(documentHandle)]
     };
-    const response = await this.integrator.View.execute(data);
+    const response = await _Integrator.default.View.execute(data);
 
     const plans = this._getResponsePlans(response.list);
 

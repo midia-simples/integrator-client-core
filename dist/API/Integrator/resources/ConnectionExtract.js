@@ -16,5 +16,6 @@ class ConnectionExtract extends _Resource.default {
 
 }
 
-var _default = ConnectionExtract;
+var _default = new ConnectionExtract();
+
 exports.default = _default;

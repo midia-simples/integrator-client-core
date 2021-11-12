@@ -18,10 +18,6 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetCustomerWithStatus {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     document
   }) {
@@ -36,7 +32,7 @@ class GetCustomerWithStatus {
       _consulta: viewStatus,
       [documentIsCpf ? 'cpf' : 'cnpj']: documentIsCpf ? (0, _documentMasks.cpfMask)(document) : (0, _documentMasks.cnpjMask)(document)
     };
-    const response = await this.integrator.Customer.exists(data);
+    const response = await _Integrator.default.Customer.exists(data);
 
     if (response) {
       const {
