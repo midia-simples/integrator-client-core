@@ -10,10 +10,6 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListNotaFiscal {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli,
     desde,
@@ -21,7 +17,7 @@ class ListNotaFiscal {
   }) {
     const {
       data
-    } = await this.integrator.NotaFiscal.list({
+    } = await _Integrator.default.NotaFiscal.list({
       codcli,
       desde: `01/${desde}`,
       hasta: `31/${hasta}`

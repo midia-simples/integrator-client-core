@@ -4,10 +4,6 @@ import { removeNotNumbers } from '~/util/removeNotNumbers';
 import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class ShowCustomer {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ document }) {
     const documentNum = removeNotNumbers(document);
     const documentIsCpf = documentNum.length === 11;
@@ -17,7 +13,7 @@ class ShowCustomer {
         documentIsCpf ? cpfMask(documentNum) : cnpjMask(documentNum),
       ],
     };
-    const result = await this.integrator.Customer.exists(data);
+    const result = await Integrator.Customer.exists(data);
 
     return result;
   }

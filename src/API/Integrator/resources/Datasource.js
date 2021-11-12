@@ -30,4 +30,4 @@ class Datasource extends Resource {
   }
 }
 
-export default Datasource;
+export default new Datasource();

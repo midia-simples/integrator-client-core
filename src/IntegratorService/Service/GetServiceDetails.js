@@ -1,12 +1,8 @@
 import Integrator from '~/API/Integrator';
 
 class GetServiceDetails {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli, codsercli }) {
-    const { data } = await this.integrator.Service.detail({
+    const { data } = await Integrator.Service.detail({
       codcli,
       codsercli,
     });

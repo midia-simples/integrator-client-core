@@ -3,14 +3,10 @@ import isJSON from '~/util/isJSON';
 import ServiceError from '~/util/ServiceError';
 
 class OpenTicket {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({
     codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
   }) {
-    const { data } = await this.integrator.Datasource.criarAtendimento({
+    const { data } = await Integrator.Datasource.criarAtendimento({
       codcli,
       codsercli,
       ...(codcar && { codcar }),

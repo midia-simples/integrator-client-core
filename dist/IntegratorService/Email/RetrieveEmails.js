@@ -18,10 +18,6 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class RetrieveEmails {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async emailsRaw(emails, mainEmail) {
     const filteredEmails = emails.map(emailObject => emailObject.e_mail).filter(email => email !== mainEmail);
     return [mainEmail, ...filteredEmails];
@@ -58,7 +54,7 @@ class RetrieveEmails {
     });
     const {
       data
-    } = await this.integrator.Datasource.listaEmails({
+    } = await _Integrator.default.Datasource.listaEmails({
       codcli
     });
 

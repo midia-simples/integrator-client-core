@@ -10,4 +10,4 @@ class NotaFiscal extends Resource {
   }
 }
 
-export default NotaFiscal;
+export default new NotaFiscal();

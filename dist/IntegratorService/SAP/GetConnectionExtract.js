@@ -10,10 +10,6 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetConnectionExtract {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli,
     codsercli,
@@ -23,7 +19,7 @@ class GetConnectionExtract {
   }) {
     const {
       data
-    } = await this.integrator.ConnectionExtract.list({
+    } = await _Integrator.default.ConnectionExtract.list({
       codcli,
       codsercli,
       login,

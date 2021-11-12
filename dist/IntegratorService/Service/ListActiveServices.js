@@ -12,10 +12,6 @@ var _GetServiceDetails = _interopRequireDefault(require("./GetServiceDetails"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListActiveServices {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli,
     statusQuery
@@ -26,7 +22,7 @@ class ListActiveServices {
     } = statusQuery || {};
     const {
       data
-    } = await this.integrator.Service.list({
+    } = await _Integrator.default.Service.list({
       codcli
     });
 

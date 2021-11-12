@@ -6,10 +6,6 @@ import { cpfMask, cnpjMask } from '~/util/documentMasks';
 import ServiceError from '~/util/ServiceError';
 
 class GetCustomerWithStatus {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ document }) {
     document = removeNotNumbers(document);
     const documentIsCpf = document.length === 11;
@@ -23,7 +19,7 @@ class GetCustomerWithStatus {
         : cnpjMask(document),
     };
 
-    const response = await this.integrator.Customer.exists(data);
+    const response = await Integrator.Customer.exists(data);
 
     if (response) {
       const { codcli, nome } = response.data.data.results[0];

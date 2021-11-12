@@ -10,4 +10,4 @@ class Bill extends Resource {
   }
 }
 
-export default Bill;
+export default new Bill();

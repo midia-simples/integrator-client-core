@@ -6,4 +6,4 @@ class DueDate extends Resource {
   }
 }
 
-export default DueDate;
+export default new DueDate();

@@ -6,4 +6,4 @@ class Ged extends Resource {
   }
 }
 
-export default Ged;
+export default new Ged();

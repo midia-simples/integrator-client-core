@@ -34,5 +34,6 @@ class NotaFiscal extends _Resource.default {
 
 }
 
-var _default = NotaFiscal;
+var _default = new NotaFiscal();
+
 exports.default = _default;

@@ -12,16 +12,12 @@ var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetCustomerInfo {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli
   }) {
     const {
       data
-    } = await this.integrator.Customer.getInfo({
+    } = await _Integrator.default.Customer.getInfo({
       codcli
     });
     if (data.data.results) return data.data.results[0];

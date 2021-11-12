@@ -16,10 +16,6 @@ var _documentMasks = require("../../util/documentMasks");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetPasswordCustomer {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     document
   }) {
@@ -34,7 +30,7 @@ class GetPasswordCustomer {
       _consulta: viewLogin,
       [documentIsCpf ? 'cpf' : 'cnpj']: documentIsCpf ? (0, _documentMasks.cpfMask)(documentHandle) : (0, _documentMasks.cnpjMask)(documentHandle)
     };
-    const response = await this.integrator.View.execute(params);
+    const response = await _Integrator.default.View.execute(params);
 
     if (response && !response.data.error) {
       const {

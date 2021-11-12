@@ -4,10 +4,6 @@ import { removeNotNumbers } from '~/util/removeNotNumbers';
 import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class ShowAllPlans {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ document }) {
     const documentHandle = removeNotNumbers(document);
 
@@ -19,7 +15,7 @@ class ShowAllPlans {
         documentIsCpf ? cpfMask(documentHandle) : cnpjMask(documentHandle),
       ],
     };
-    const response = await this.integrator.View.execute(data);
+    const response = await Integrator.View.execute(data);
 
     const plans = this._getResponsePlans(response.list);
 

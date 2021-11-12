@@ -14,17 +14,13 @@ var _config = _interopRequireDefault(require("../../config"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ImprimirNotaFiscal {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codnf,
     codtnf
   }) {
     const {
       data
-    } = await this.integrator.NotaFiscal.imprimirNf({
+    } = await _Integrator.default.NotaFiscal.imprimirNf({
       codnf,
       codtnf
     });

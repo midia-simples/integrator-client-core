@@ -2,15 +2,11 @@ import Integrator from '~/API/Integrator';
 import config from '~/config';
 
 class GetBoletoData {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codfat }) {
-    const responseDownload = await this.integrator.Datasource.verBoleto({
+    const responseDownload = await Integrator.Datasource.verBoleto({
       codfat,
     });
-    const linhaDigitavel = await this.integrator.Datasource.linhaDigitavel({
+    const linhaDigitavel = await Integrator.Datasource.linhaDigitavel({
       codfat,
     });
 

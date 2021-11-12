@@ -10,16 +10,12 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListLogins {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli
   }) {
     const {
       data
-    } = await this.integrator.AuthorizationLogin.list({
+    } = await _Integrator.default.AuthorizationLogin.list({
       codcli
     });
 

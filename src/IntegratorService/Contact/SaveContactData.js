@@ -2,17 +2,13 @@ import Integrator from '~/API/Integrator';
 import ServiceError from '~/util/ServiceError';
 
 class SaveContactData {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli, e_mail, celular }) {
-    const { data: contactsList } = await this.integrator.Contact.list({
+    const { data: contactsList } = await Integrator.Contact.list({
       codcli,
     });
     if (contactsList.data.results) {
       const { codco_cl } = contactsList.data.results[0];
-      await this.integrator.Datasource.salvarContatoCliente({
+      await Integrator.Datasource.salvarContatoCliente({
         codco_cl,
         e_mail,
         celular,

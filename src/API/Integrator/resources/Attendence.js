@@ -6,4 +6,4 @@ class Attendence extends Resource {
   }
 }
 
-export default Attendence;
+export default new Attendence();

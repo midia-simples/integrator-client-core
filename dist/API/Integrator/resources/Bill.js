@@ -20,5 +20,6 @@ class Bill extends _Resource.default {
 
 }
 
-var _default = Bill;
+var _default = new Bill();
+
 exports.default = _default;
