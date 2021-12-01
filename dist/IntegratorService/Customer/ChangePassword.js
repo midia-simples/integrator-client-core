@@ -24,7 +24,7 @@ class ChangePassword {
   }) {
     const documentNum = (0, _removeNotNumbers.removeNotNumbers)(document);
     const {
-      senha: senha_ant
+      passwordIntegrator: senha_ant
     } = await _GetPasswordCustomer.default.run({
       document
     });

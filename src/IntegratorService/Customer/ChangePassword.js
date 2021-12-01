@@ -7,7 +7,7 @@ import GetPasswordCustomer from './GetPasswordCustomer';
 class ChangePassword {
   async run({ document, password: senha }) {
     const documentNum = removeNotNumbers(document);
-    const { senha: senha_ant } = await GetPasswordCustomer.run({ document });
+    const { passwordIntegrator: senha_ant } = await GetPasswordCustomer.run({ document });
 
     const documentIsCpf = documentNum.length === 11;
     const response = await Integrator.Customer.changePassword({
