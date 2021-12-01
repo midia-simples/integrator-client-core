@@ -11,7 +11,7 @@ class ChangePassword {
 
   async run({ document, password: senha }) {
     const documentNum = removeNotNumbers(document);
-    const { senha: senha_ant } = await GetPasswordCustomer.run({ document });
+    const { passwordIntegrator: senha_ant } = await GetPasswordCustomer.run({ document });
 
     const documentIsCpf = documentNum.length === 11;
     const response = await this.integrator.Customer.changePassword({
@@ -20,6 +20,10 @@ class ChangePassword {
       tipoPessoa: documentIsCpf ? 'F' : 'J',
       cpfCnpj: documentIsCpf ? cpfMask(documentNum) : cnpjMask(documentNum),
     });
+
+    console.log(response);
+    console.log(senha);
+    console.log(senha_ant);
 
     if (!response.error) return;
     throw new ServiceError(500, 'Não foi possível alterar a senha');
