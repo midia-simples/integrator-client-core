@@ -17,10 +17,6 @@ class ChangePassword {
       cpfCnpj: documentIsCpf ? cpfMask(documentNum) : cnpjMask(documentNum),
     });
 
-    console.log(response);
-    console.log(senha);
-    console.log(senha_ant);
-
     if (!response.error) return;
     throw new ServiceError(500, 'Não foi possível alterar a senha');
   }
