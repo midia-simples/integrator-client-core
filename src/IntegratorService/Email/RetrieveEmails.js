@@ -5,10 +5,6 @@ import { removeNotNumbers } from '~/util/removeNotNumbers';
 import ServiceError from '~/util/ServiceError';
 
 class RetrieveEmails {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async emailsRaw(emails, mainEmail) {
     const filteredEmails = emails
       .map((emailObject) => emailObject.e_mail)
@@ -45,7 +41,7 @@ class RetrieveEmails {
     const { codcli } = await GetCustomerWithStatus.run({
       document: documentNum,
     });
-    const { data } = await this.integrator.Datasource.listaEmails({ codcli });
+    const { data } = await Integrator.Datasource.listaEmails({ codcli });
     if (data.data?.results) {
       if (censored) return this.emailsCensored(data.data.results, mainEmail);
       return this.emailsRaw(data.data.results, mainEmail);

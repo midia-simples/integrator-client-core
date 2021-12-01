@@ -10,17 +10,13 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetServiceDetails {
-  constructor() {
-    this.integrator = new _Integrator.default();
-  }
-
   async run({
     codcli,
     codsercli
   }) {
     const {
       data
-    } = await this.integrator.Service.detail({
+    } = await _Integrator.default.Service.detail({
       codcli,
       codsercli
     });

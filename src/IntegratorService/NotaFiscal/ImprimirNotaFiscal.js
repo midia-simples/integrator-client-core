@@ -3,12 +3,8 @@ import renderPDF from '~/util/renderPDF';
 import config from '~/config';
 
 class ImprimirNotaFiscal {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codnf, codtnf }) {
-    const { data } = await this.integrator.NotaFiscal.imprimirNf({
+    const { data } = await Integrator.NotaFiscal.imprimirNf({
       codnf,
       codtnf,
     });

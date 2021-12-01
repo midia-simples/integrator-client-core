@@ -2,12 +2,8 @@ import Integrator from '~/API/Integrator';
 import ServiceError from '~/util/ServiceError';
 
 class ListContactData {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli }) {
-    const { data: contactsList } = await this.integrator.Contact.list({
+    const { data: contactsList } = await Integrator.Contact.list({
       codcli,
     });
     if (contactsList.data.results) {

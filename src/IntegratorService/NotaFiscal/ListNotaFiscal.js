@@ -1,12 +1,8 @@
 import Integrator from '~/API/Integrator';
 
 class ListNotaFiscal {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli, desde, hasta }) {
-    const { data } = await this.integrator.NotaFiscal.list({
+    const { data } = await Integrator.NotaFiscal.list({
       codcli,
       desde: `01/${desde}`,
       hasta: `31/${hasta}`,

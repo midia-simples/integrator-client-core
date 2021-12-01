@@ -5,16 +5,12 @@ import { cpfMask, cnpjMask } from '~/util/documentMasks';
 import GetPasswordCustomer from './GetPasswordCustomer';
 
 class ChangePassword {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ document, password: senha }) {
     const documentNum = removeNotNumbers(document);
     const { passwordIntegrator: senha_ant } = await GetPasswordCustomer.run({ document });
 
     const documentIsCpf = documentNum.length === 11;
-    const response = await this.integrator.Customer.changePassword({
+    const response = await Integrator.Customer.changePassword({
       senha_ant,
       senha,
       tipoPessoa: documentIsCpf ? 'F' : 'J',

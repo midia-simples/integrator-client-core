@@ -36,5 +36,6 @@ class Customer extends _Resource.default {
 
 }
 
-var _default = Customer;
+var _default = new Customer();
+
 exports.default = _default;

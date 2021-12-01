@@ -6,4 +6,4 @@ class ConnectionExtract extends Resource {
   }
 }
 
-export default ConnectionExtract;
+export default new ConnectionExtract();

@@ -1,12 +1,8 @@
 import Integrator from '~/API/Integrator';
 
 class ListLogins {
-  constructor() {
-    this.integrator = new Integrator();
-  }
-
   async run({ codcli }) {
-    const { data } = await this.integrator.AuthorizationLogin.list({ codcli });
+    const { data } = await Integrator.AuthorizationLogin.list({ codcli });
     if (data.data) {
       const list = data.data.results;
 

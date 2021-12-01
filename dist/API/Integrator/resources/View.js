@@ -16,5 +16,6 @@ class View extends _Resource.default {
 
 }
 
-var _default = View;
+var _default = new View();
+
 exports.default = _default;
