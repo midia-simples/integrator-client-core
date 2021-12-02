@@ -10,8 +10,10 @@ class GetBoletoData {
       codfat,
     });
 
-    const resultsDownload = responseDownload.data.data.results;
-    const resultsLinha = linhaDigitavel.data.data.results;
+    const resultsDownload = responseDownload.data?.data?.results;
+    const resultsLinha = linhaDigitavel.data?.data?.results;
+
+    if (!resultsDownload || !resultsLinha) throw new Error('Boleto não existe');
 
     const { host } = config.getConfig();
 
