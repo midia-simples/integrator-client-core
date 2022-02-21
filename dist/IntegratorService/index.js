@@ -13,6 +13,8 @@ var _GetPasswordCustomer = _interopRequireDefault(require("./Customer/GetPasswor
 
 var _GetCustomerWithStatus = _interopRequireDefault(require("./Customer/GetCustomerWithStatus"));
 
+var _GetCustomerInfo = _interopRequireDefault(require("./Customer/GetCustomerInfo"));
+
 var _ListContactData = _interopRequireDefault(require("./Contact/ListContactData"));
 
 var _SaveContactData = _interopRequireDefault(require("./Contact/SaveContactData"));

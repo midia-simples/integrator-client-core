@@ -2,6 +2,7 @@ import ChangePassword from './Customer/ChangePassword';
 import GetCustomerEmail from './Customer/GetCustomerEmail';
 import GetPasswordCustomer from './Customer/GetPasswordCustomer';
 import GetCustomerWithStatus from './Customer/GetCustomerWithStatus';
+import GetCustomerInfo from './Customer/GetCustomerInfo';
 
 import ListContactData from './Contact/ListContactData';
 import SaveContactData from './Contact/SaveContactData';
