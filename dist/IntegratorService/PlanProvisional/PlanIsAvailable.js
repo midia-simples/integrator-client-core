@@ -17,21 +17,10 @@ class PlanIsAvailable {
     const plans = await _ShowPlanProvisional.default.run({
       codcli
     });
-
-    if (plans) {
-      if (Array.isArray(plans)) {
-        const planFound = plans.filter(plan => plan.codsercli === codsercli);
-        if (planFound) return {
-          available: true
-        };
-      } else {
-        const {
-          codsercli: planCodsercli
-        } = plans;
-        return codsercli === planCodsercli;
-      }
-    }
-
+    const planFound = plans.find(plan => plan.codsercli === codsercli);
+    if (planFound) return {
+      available: true
+    };
     return {
       available: false
     };
