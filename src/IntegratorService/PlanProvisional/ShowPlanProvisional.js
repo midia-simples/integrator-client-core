@@ -4,15 +4,19 @@ class ShowPlanProvisional {
   async run({ codcli }) {
     const { data } = await Integrator.Provisional.details({ codcli });
 
-    const { results } = data.data;
+    const results = data?.data?.results;
 
-    if (!Array.isArray(results)) {
-      if (results?.quant_planos === '0') {
-        return [];
-      }
-      return [results];
+    const qtd_planos = results[9]?.quant_planos;
+
+    if (qtd_planos === '0') {
+      return [];
     }
-    return results[0]?.planos || [];
+
+    if (qtd_planos !== '1') {
+      return results[0]?.planos || [];
+    }
+
+    return [results[0]?.planos];
   }
 }
 
