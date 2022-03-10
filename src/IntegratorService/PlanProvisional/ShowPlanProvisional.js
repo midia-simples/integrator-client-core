@@ -6,18 +6,22 @@ class ShowPlanProvisional {
 
     const results = data?.data?.results;
 
-    const qtd_planos = results[0]?.quant_planos;
+    if (Array.isArray(results)) {
+      const qtd_planos = results[0]?.quant_planos;
 
-    if (qtd_planos === '0') {
-      return [];
+      if (qtd_planos === '0') {
+        return [];
+      }
+
+      if (Number(qtd_planos) > 1) {
+        // pra quando tiver mais de 1 plano suspenso
+        return results[0]?.planos || [];
+      }
+
+      return [results[0]?.planos];
     }
 
-    if (Number(qtd_planos) > 1) {
-      // pra quando tiver mais de 1 plano suspenso
-      return results[0]?.planos || [];
-    }
-
-    return [results[0]?.planos];
+    return results?.planos || [];
   }
 }
 
