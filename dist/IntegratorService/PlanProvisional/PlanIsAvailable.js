@@ -17,7 +17,7 @@ class PlanIsAvailable {
     const plans = await _ShowPlanProvisional.default.run({
       codcli
     });
-    const planFound = plans.find(plan => plan.codsercli === codsercli);
+    const planFound = plans === null || plans === void 0 ? void 0 : plans.find(plan => (plan === null || plan === void 0 ? void 0 : plan.codsercli) === codsercli);
     if (planFound) return {
       available: true
     };

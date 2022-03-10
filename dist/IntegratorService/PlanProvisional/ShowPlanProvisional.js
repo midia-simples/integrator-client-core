@@ -13,26 +13,27 @@ class ShowPlanProvisional {
   async run({
     codcli
   }) {
-    var _results$;
+    var _data$data, _results$, _results$3;
 
     const {
       data
     } = await _Integrator.default.Provisional.details({
       codcli
     });
-    const {
-      results
-    } = data.data;
+    const results = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results;
+    const qtd_planos = (_results$ = results[9]) === null || _results$ === void 0 ? void 0 : _results$.quant_planos;
 
-    if (!Array.isArray(results)) {
-      if ((results === null || results === void 0 ? void 0 : results.quant_planos) === '0') {
-        return [];
-      }
-
-      return [results];
+    if (qtd_planos === '0') {
+      return [];
     }
 
-    return ((_results$ = results[0]) === null || _results$ === void 0 ? void 0 : _results$.planos) || [];
+    if (qtd_planos !== '1') {
+      var _results$2;
+
+      return ((_results$2 = results[0]) === null || _results$2 === void 0 ? void 0 : _results$2.planos) || [];
+    }
+
+    return [(_results$3 = results[0]) === null || _results$3 === void 0 ? void 0 : _results$3.planos];
   }
 
 }
