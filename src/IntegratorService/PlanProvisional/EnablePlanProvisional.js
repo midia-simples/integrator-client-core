@@ -3,20 +3,22 @@ import ServiceError from '~/util/ServiceError';
 
 class EnablePlanProvisional {
   async run({ codsercli }) {
-    const data = {
-      codsercli,
-    };
+    try {
+      const response = await Integrator.Provisional.execute({ codsercli });
 
-    const response = await Integrator.Provisional.execute(data);
+      const { error, exception } = response.data;
 
-    if (response && response.data && !response.data.error) {
+      if (error) {
+        throw new ServiceError(500, String(exception) || 'Ocorreu um erro ao se comunicar com o Integrator');
+      }
+
       return { status: true, retorno: 'Seu plano foi habilitado.' };
+    } catch (err) {
+      if (err?.response || err?.request) {
+        throw new ServiceError(err.response.status || 500, '[Axios Error] Erro ao se comunicar com o Integrator');
+      }
+      throw new ServiceError(err?.status || 500, err.message);
     }
-
-    throw new ServiceError(
-      500,
-      response.data.exception || 'Não foi possível habilitar provisória',
-    );
   }
 }
 

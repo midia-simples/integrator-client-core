@@ -15,19 +15,30 @@ class EnablePlanProvisional {
   async run({
     codsercli
   }) {
-    const data = {
-      codsercli
-    };
-    const response = await _Integrator.default.Provisional.execute(data);
+    try {
+      const response = await _Integrator.default.Provisional.execute({
+        codsercli
+      });
+      const {
+        error,
+        exception
+      } = response.data;
 
-    if (response && response.data && !response.data.error) {
+      if (error) {
+        throw new _ServiceError.default(500, String(exception) || 'Ocorreu um erro ao se comunicar com o Integrator');
+      }
+
       return {
         status: true,
         retorno: 'Seu plano foi habilitado.'
       };
-    }
+    } catch (err) {
+      if (err !== null && err !== void 0 && err.response || err !== null && err !== void 0 && err.request) {
+        throw new _ServiceError.default(err.response.status || 500, '[Axios Error] Erro ao se comunicar com o Integrator');
+      }
 
-    throw new _ServiceError.default(500, response.data.exception || 'Não foi possível habilitar provisória');
+      throw new _ServiceError.default((err === null || err === void 0 ? void 0 : err.status) || 500, err.message);
+    }
   }
 
 }
