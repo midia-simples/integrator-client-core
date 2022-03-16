@@ -49,6 +49,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = {
   GetCustomerEmail: _GetCustomerEmail.default,
+  GetCustomerInfo: _GetCustomerInfo.default,
   GetCustomerWithStatus: _GetCustomerWithStatus.default,
   GetPasswordCustomer: _GetPasswordCustomer.default,
   ChangePassword: _ChangePassword.default,
