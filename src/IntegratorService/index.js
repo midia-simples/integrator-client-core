@@ -30,6 +30,7 @@ import ShowAllPlans from './Plan/ShowAllPlans';
 
 export default {
   GetCustomerEmail,
+  GetCustomerInfo,
   GetCustomerWithStatus,
   GetPasswordCustomer,
   ChangePassword,
