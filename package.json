@@ -1,6 +1,6 @@
 {
   "name": "integrator-client-core",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Cliente que faz chamadas ao Integrator",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "babel --presets='@babel/preset-env' src --out-dir dist",
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
-    "dev": "nodemon --exec yarn babel-node src/server.js",
+    "dev": "yarn babel-node src/integrator.dev.js src/integrator.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucas Hideki Yamaguti Maziero",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "date-fns": "^2.25.0"
+    "date-fns": "^2.25.0",
+    "dotenv": "^16.0.0"
   }
 }
