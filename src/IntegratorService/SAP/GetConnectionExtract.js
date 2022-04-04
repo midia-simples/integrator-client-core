@@ -16,6 +16,8 @@ class GetConnectionExtract {
 
       return list.map((extrato) => ({
         comeco: extrato.acctstarttime,
+        comeco_formatado: extrato.acctstarttime.split(' ')[0].split('-').reverse().join('/'),
+        fim_formatado: extrato.acctstoptime.split(' ')[0].split('-').reverse().join('/'),
         fim: extrato.acctstoptime,
         tempo_acesso: extrato.acctsessiontime,
         tempo_acesso_formatado: extrato.acctsessiontime_formatado,
