@@ -14,6 +14,10 @@ class Attendence extends _Resource.default {
     return this.request('atendimento.addAnexo', data);
   }
 
+  listTypes(data) {
+    return this.request('atendimento.listTypes', data);
+  }
+
 }
 
 var _default = new Attendence();

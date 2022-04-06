@@ -1,3 +1,5 @@
+import ListTypes from './Attendence/ListTypes';
+
 import ChangePassword from './Customer/ChangePassword';
 import GetCustomerEmail from './Customer/GetCustomerEmail';
 import GetPasswordCustomer from './Customer/GetPasswordCustomer';
@@ -49,4 +51,5 @@ export default {
   OpenTicket,
   ShowAllPlans,
   RetrieveEmails,
+  ListTypes,
 };
