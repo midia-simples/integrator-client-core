@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _ListTypes = _interopRequireDefault(require("./Attendence/ListTypes"));
+
 var _ChangePassword = _interopRequireDefault(require("./Customer/ChangePassword"));
 
 var _GetCustomerEmail = _interopRequireDefault(require("./Customer/GetCustomerEmail"));
@@ -67,6 +69,7 @@ var _default = {
   EnablePlanProvisional: _EnablePlanProvisional.default,
   OpenTicket: _OpenTicket.default,
   ShowAllPlans: _ShowAllPlans.default,
-  RetrieveEmails: _RetrieveEmails.default
+  RetrieveEmails: _RetrieveEmails.default,
+  ListTypes: _ListTypes.default
 };
 exports.default = _default;
