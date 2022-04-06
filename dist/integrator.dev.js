@@ -19,7 +19,7 @@ async function dev() {
   */
 
 
-  console.log(await _index.IntegratorService.ListTypes.run());
+  console.log(await _index.IntegratorService.AttendenceListTypes.run());
   /*
   const { types } = await IntegratorService.ListTypes();
   console.log(types);
