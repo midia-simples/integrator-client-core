@@ -1,6 +1,6 @@
 {
   "name": "integrator-client-core",
-  "version": "1.0.12",
+  "version": "1.0.1333",
   "description": "Cliente que faz chamadas ao Integrator",
   "main": "dist/index.js",
   "scripts": {
