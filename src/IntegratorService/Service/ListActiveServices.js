@@ -1,3 +1,5 @@
+import utf8 from 'utf8';
+
 import Integrator from '~/API/Integrator';
 import GetServiceDetails from './GetServiceDetails';
 
@@ -7,22 +9,22 @@ class ListActiveServices {
 
     const { data } = await Integrator.Service.list({ codcli });
     if (data.data) {
-      const list = data.data.results;
+      const list = data.data?.results;
 
       const statusExtractList = statusQuery
-        ? list.filter((service) => (service.descri_est === text) === getEqual)
+        ? list?.filter((service) => (service.descri_est === text) === getEqual)
         : list;
 
-      const extractList = statusExtractList.map(async (service) => {
+      const extractList = statusExtractList?.map(async (service) => {
         const details = await GetServiceDetails.run({
           codcli,
           codsercli: service.codsercli,
         });
 
         return {
-          name: service.descri_ser,
+          name: utf8.decode(service.descri_ser),
           cobranca: service.descri_cob,
-          obs: service.obs,
+          obs: utf8.decode(service.obs),
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,

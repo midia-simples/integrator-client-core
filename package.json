@@ -5,11 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='node_modules'",
-    "build": "babel --presets='@babel/preset-env' src --out-dir dist",
+    "clean": "yarn rimraf dist",
+    "build": "yarn clean && babel --presets='@babel/preset-env' src --out-dir dist",
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
-    "dev": "yarn babel-node src/integrator.dev.js src/integrator.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "yarn babel-node src/integrator.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "author": "Lucas Hideki Yamaguti Maziero",
   "license": "UNLICENSED",
@@ -22,11 +24,14 @@
     "eslint": "^8.1.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
-    "eslint-plugin-import": "^2.25.2"
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^8.0.0",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "axios": "^0.24.0",
     "date-fns": "^2.25.0",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "utf8": "^3.0.0"
   }
 }
