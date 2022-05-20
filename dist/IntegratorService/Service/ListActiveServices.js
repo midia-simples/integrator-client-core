@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _utf = _interopRequireDefault(require("utf8"));
+
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _GetServiceDetails = _interopRequireDefault(require("./GetServiceDetails"));
@@ -27,17 +29,19 @@ class ListActiveServices {
     });
 
     if (data.data) {
-      const list = data.data.results;
-      const statusExtractList = statusQuery ? list.filter(service => service.descri_est === text === getEqual) : list;
-      const extractList = statusExtractList.map(async service => {
+      var _data$data;
+
+      const list = (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results;
+      const statusExtractList = statusQuery ? list === null || list === void 0 ? void 0 : list.filter(service => service.descri_est === text === getEqual) : list;
+      const extractList = statusExtractList === null || statusExtractList === void 0 ? void 0 : statusExtractList.map(async service => {
         const details = await _GetServiceDetails.default.run({
           codcli,
           codsercli: service.codsercli
         });
         return {
-          name: service.descri_ser,
+          name: _utf.default.decode(service.descri_ser),
           cobranca: service.descri_cob,
-          obs: service.obs,
+          obs: _utf.default.decode(service.obs),
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,
