@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utf = _interopRequireDefault(require("utf8"));
+var _utf = require("../../util/utf8");
 
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
@@ -32,9 +32,9 @@ class GetServiceDetails {
         bairro
       } = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : (_data$data$results = _data$data.results) === null || _data$data$results === void 0 ? void 0 : _data$data$results.row;
       return {
-        nome_cid: _utf.default.decode(nome_cid),
-        endereco: _utf.default.decode(endereco),
-        bairro: _utf.default.decode(bairro)
+        nome_cid: (0, _utf.safeDecode)(nome_cid),
+        endereco: (0, _utf.safeDecode)(endereco),
+        bairro: (0, _utf.safeDecode)(bairro)
       };
     }
 

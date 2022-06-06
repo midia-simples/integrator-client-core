@@ -13,6 +13,8 @@ async function dev() {
 
   // for test change this file and log response
   await IntegratorService.AttendenceListTypes.run();
+
+  //console.log(await IntegratorService.ListActiveServices.run({ codcli: 60000 }));
 }
 
 dev();
