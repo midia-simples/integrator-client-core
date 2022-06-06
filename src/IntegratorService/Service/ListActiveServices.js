@@ -1,4 +1,4 @@
-import utf8 from 'utf8';
+import { safeDecode } from '~/util/utf8';
 
 import Integrator from '~/API/Integrator';
 import GetServiceDetails from './GetServiceDetails';
@@ -22,9 +22,9 @@ class ListActiveServices {
         });
 
         return {
-          name: utf8.decode(service.descri_ser),
+          name: safeDecode(service.descri_ser),
           cobranca: service.descri_cob,
-          obs: utf8.decode(service.obs),
+          obs: safeDecode(service.obs),
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,

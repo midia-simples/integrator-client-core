@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utf = _interopRequireDefault(require("utf8"));
+var _utf = require("../../util/utf8");
 
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
@@ -39,9 +39,9 @@ class ListActiveServices {
           codsercli: service.codsercli
         });
         return {
-          name: _utf.default.decode(service.descri_ser),
+          name: (0, _utf.safeDecode)(service.descri_ser),
           cobranca: service.descri_cob,
-          obs: _utf.default.decode(service.obs),
+          obs: (0, _utf.safeDecode)(service.obs),
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,
