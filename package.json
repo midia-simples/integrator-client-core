@@ -10,7 +10,8 @@
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
     "dev": "yarn babel-node src/integrator.dev.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo test"
   },
   "author": "Lucas Hideki Yamaguti Maziero",
   "license": "UNLICENSED",
