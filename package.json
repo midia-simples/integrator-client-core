@@ -1,6 +1,6 @@
 {
   "name": "integrator-client-core",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Cliente que faz chamadas ao Integrator",
   "main": "dist/index.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
     "dev": "yarn babel-node src/integrator.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo test"
   },
   "author": "Lucas Hideki Yamaguti Maziero",
   "license": "UNLICENSED",
