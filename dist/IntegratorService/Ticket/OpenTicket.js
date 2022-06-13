@@ -22,7 +22,8 @@ class OpenTicket {
     descri_oco,
     codusu,
     codocop,
-    codcatoco
+    codcatoco,
+    asset_base64
   }) {
     const {
       data
@@ -56,6 +57,20 @@ class OpenTicket {
       codoco,
       numero_oco
     } = data.data.results[0];
+
+    if (asset_base64) {
+      const response = await _Integrator.default.Attendence.addAnexo({
+        obs: 'Arquivo enviado pelo usuário',
+        nome_anexo: 'arquivo_anexo.png',
+        versao: '.png',
+        codoca: '',
+        anexo: asset_base64,
+        codoco
+      }); // eslint-disable-next-line no-console
+
+      console.log(JSON.stringify(response, null, 2));
+    }
+
     return {
       codoco,
       numero_oco
