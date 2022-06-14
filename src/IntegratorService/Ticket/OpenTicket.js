@@ -4,7 +4,7 @@ import ServiceError from '~/util/ServiceError';
 
 class OpenTicket {
   async run({
-    codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco, asset_base64,
+    codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
   }) {
     const { data } = await Integrator.Datasource.criarAtendimento({
       codcli,
@@ -30,19 +30,6 @@ class OpenTicket {
     }
 
     const { codoco, numero_oco } = data.data.results[0];
-
-    if (asset_base64) {
-      const response = await Integrator.Attendence.addAnexo({
-        obs: 'Arquivo enviado pelo usuário',
-        nome_anexo: 'arquivo_anexo.png',
-        versao: '.png',
-        codoca: '',
-        anexo: asset_base64,
-        codoco,
-      });
-      // eslint-disable-next-line no-console
-      console.log(JSON.stringify(response, null, 2));
-    }
 
     return {
       codoco,
