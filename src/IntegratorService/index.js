@@ -27,6 +27,7 @@ import PlanIsAvailable from './PlanProvisional/PlanIsAvailable';
 import EnablePlanProvisional from './PlanProvisional/EnablePlanProvisional';
 
 import OpenTicket from './Ticket/OpenTicket';
+import AddAnexoOnTicket from './Ticket/AddAnexoOnTicket';
 
 import ShowAllPlans from './Plan/ShowAllPlans';
 
@@ -52,4 +53,5 @@ export default {
   ShowAllPlans,
   RetrieveEmails,
   AttendenceListTypes,
+  AddAnexoOnTicket,
 };
