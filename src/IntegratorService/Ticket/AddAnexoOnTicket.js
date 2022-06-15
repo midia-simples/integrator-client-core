@@ -2,14 +2,18 @@ import Integrator from '~/API/Integrator';
 import ServiceError from '~/util/ServiceError';
 
 class AddAnexoOnTicket {
-  async run({ anexo_base64, codoco }) {
-    const { data } = await Integrator.Attendence.addAnexo({
+  async run({
+    anexo_base64, codoco, description, fileName,
+  }) {
+    const { data } = await Integrator.Ged.addArquivo({
       obs: 'Arquivo enviado pelo usuário',
-      nome_anexo: 'arquivo_anexo.png',
+      descricao: description,
+      codtarq: '01SW0MJ9VS',
+      nome_arq: `${fileName}.png`,
       versao: '.png',
-      codoca: '',
-      anexo: anexo_base64,
-      codoco,
+      codvin: 'OCORRENCIA',
+      arquivo: anexo_base64,
+      codigo_vin: codoco,
     });
 
     const { error } = data;
