@@ -14,19 +14,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class AddAnexoOnTicket {
   async run({
     anexo_base64,
-    codoco
+    codoco,
+    description,
+    fileName
   }) {
     var _data$data;
 
     const {
       data
-    } = await _Integrator.default.Attendence.addAnexo({
+    } = await _Integrator.default.Ged.addArquivo({
       obs: 'Arquivo enviado pelo usuário',
-      nome_anexo: 'arquivo_anexo.png',
+      descricao: description,
+      codtarq: '01SW0MJ9VS',
+      nome_arq: `${fileName}.png`,
       versao: '.png',
-      codoca: '',
-      anexo: anexo_base64,
-      codoco
+      codvin: 'OCORRENCIA',
+      arquivo: anexo_base64,
+      codigo_vin: codoco
     });
     const {
       error
