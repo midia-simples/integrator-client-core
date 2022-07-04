@@ -11,6 +11,8 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _GetServiceDetails = _interopRequireDefault(require("./GetServiceDetails"));
 
+var _GetSpeedServices = _interopRequireDefault(require("./GetSpeedServices"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListActiveServices {
@@ -38,6 +40,9 @@ class ListActiveServices {
           codcli,
           codsercli: service.codsercli
         });
+        const speedPlan = await _GetSpeedServices.default.run({
+          codsercli: service.codsercli
+        });
         return {
           name: (0, _utf.safeDecode)(service.descri_ser),
           cobranca: service.descri_cob,
@@ -45,7 +50,8 @@ class ListActiveServices {
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,
-          ...details
+          ...details,
+          ...speedPlan
         };
       });
       return Promise.all(extractList);
