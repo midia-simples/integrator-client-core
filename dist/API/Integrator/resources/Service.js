@@ -18,6 +18,10 @@ class Service extends _Resource.default {
     return this.request('service.detail', data);
   }
 
+  speed(data) {
+    return this.request('service.getVelocidades', data);
+  }
+
 }
 
 var _default = new Service();

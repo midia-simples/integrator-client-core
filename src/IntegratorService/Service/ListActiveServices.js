@@ -2,6 +2,7 @@ import { safeDecode } from '~/util/utf8';
 
 import Integrator from '~/API/Integrator';
 import GetServiceDetails from './GetServiceDetails';
+import GetSpeedServices from './GetSpeedServices';
 
 class ListActiveServices {
   async run({ codcli, statusQuery }) {
@@ -21,6 +22,10 @@ class ListActiveServices {
           codsercli: service.codsercli,
         });
 
+        const speedPlan = await GetSpeedServices.run({
+          codsercli: service.codsercli,
+        });
+
         return {
           name: safeDecode(service.descri_ser),
           cobranca: service.descri_cob,
@@ -29,6 +34,7 @@ class ListActiveServices {
           codsercli: service.codsercli,
           status: service.descri_est,
           ...details,
+          ...speedPlan,
         };
       });
 
