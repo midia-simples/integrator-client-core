@@ -9,8 +9,6 @@ class ShowAllPlans {
       codcli,
     });
 
-    console.log(response);
-
     return this._getResponsePlans(response.data?.results);
   }
 
