@@ -1,39 +1,28 @@
 import Integrator from '~/API/Integrator';
-import { removeNotNumbers } from '~/util/removeNotNumbers';
 
 import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class ShowAllPlans {
-  async run({ document }) {
-    const documentHandle = removeNotNumbers(document);
-
-    const documentIsCpf = documentHandle.length === 11;
-
+  async run({ codcli }) {
     const data = {
       _consulta: '012I0L9WDV',
-      [documentIsCpf ? 'cpf' : 'cnpj']: [
-        documentIsCpf ? cpfMask(documentHandle) : cnpjMask(documentHandle),
-      ],
+      codcli,
     };
     const response = await Integrator.View.execute(data);
 
-    const plans = this._getResponsePlans(response.list);
-
-    return plans;
+    return this._getResponsePlans(response.list);
   }
 
   _getResponsePlans(plans) {
-    const planos = plans.filter(
-      (plano) => plano.status_150.trim() === 'Serviço Habilitado',
-    );
-    const planosFormat = planos.map((item) => ({
-      nome_plano: item.nome_do_plano_200,
-      codigo_plano: item.codigo_plano,
-      status_plano: item.status_150.trim(),
-      endereco_plano: item.endereco_instalacao_200.trim(),
-    }));
-
-    return planosFormat;
+    return plans
+      .filter(
+        (plano) => plano.status_150.trim() === 'Serviço Habilitado',
+      ).map((item) => ({
+        nome_plano: item.nome_do_plano_200,
+        codigo_plano: item.codigo_plano,
+        status_plano: item.status_150.trim(),
+        endereco_plano: item.endereco_instalacao_200.trim(),
+      }));
   }
 }
 
