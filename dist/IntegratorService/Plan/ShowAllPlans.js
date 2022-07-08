@@ -29,10 +29,10 @@ class ShowAllPlans {
   _getResponsePlans(plans) {
     var _plans$filter;
 
-    return plans === null || plans === void 0 ? void 0 : (_plans$filter = plans.filter(plano => plano.status_150.trim() === 'Serviço Habilitado')) === null || _plans$filter === void 0 ? void 0 : _plans$filter.map(item => ({
-      nome_plano: item.nome_do_plano_200,
-      codigo_plano: item.codigo_plano,
-      status_plano: item.status_150.trim(),
+    return plans === null || plans === void 0 ? void 0 : (_plans$filter = plans.filter(plano => plano.Status_150.trim() === 'Serviço Habilitado')) === null || _plans$filter === void 0 ? void 0 : _plans$filter.map(item => ({
+      nome_plano: item.Nome_do_Plano_200,
+      codigo_plano: item.Codigo_plano,
+      status_plano: item.Status_150.trim(),
       endereco_plano: item.endereco_instalacao_200.trim()
     }));
   }

@@ -15,11 +15,11 @@ class ShowAllPlans {
   _getResponsePlans(plans) {
     return plans
       ?.filter(
-        (plano) => plano.status_150.trim() === 'Serviço Habilitado',
+        (plano) => plano.Status_150.trim() === 'Serviço Habilitado',
       )?.map((item) => ({
-        nome_plano: item.nome_do_plano_200,
-        codigo_plano: item.codigo_plano,
-        status_plano: item.status_150.trim(),
+        nome_plano: item.Nome_do_Plano_200,
+        codigo_plano: item.Codigo_plano,
+        status_plano: item.Status_150.trim(),
         endereco_plano: item.endereco_instalacao_200.trim(),
       }));
   }
