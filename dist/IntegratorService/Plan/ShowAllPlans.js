@@ -21,7 +21,6 @@ class ShowAllPlans {
       _consulta: '012I0L9WDV',
       codcli
     });
-    console.log(response);
     return this._getResponsePlans((_response$data = response.data) === null || _response$data === void 0 ? void 0 : _response$data.results);
   }
 
