@@ -15,13 +15,15 @@ class ShowAllPlans {
   async run({
     codcli
   }) {
-    var _response$data;
+    var _data$data;
 
-    const response = await _Integrator.default.View.execute({
+    const {
+      data
+    } = await _Integrator.default.View.execute({
       _consulta: '012I0L9WDV',
       codcli
     });
-    return this._getResponsePlans((_response$data = response.data) === null || _response$data === void 0 ? void 0 : _response$data.results);
+    return this._getResponsePlans((_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results);
   }
 
   _getResponsePlans(plans) {
