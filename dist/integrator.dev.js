@@ -12,10 +12,7 @@ async function dev() {
     pass: process.env.API_INTEGRATOR_PASS,
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE
-  }); // for test change this file and log response
-
-
-  await _index.IntegratorService.AttendenceListTypes.run(); //console.log(await IntegratorService.ListActiveServices.run({ codcli: 60000 }));
+  });
 }
 
 dev();
