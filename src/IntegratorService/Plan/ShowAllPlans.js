@@ -4,12 +4,12 @@ import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class ShowAllPlans {
   async run({ codcli }) {
-    const response = await Integrator.View.execute({
+    const { data } = await Integrator.View.execute({
       _consulta: '012I0L9WDV',
       codcli,
     });
 
-    return this._getResponsePlans(response.data?.results);
+    return this._getResponsePlans(data.data?.results);
   }
 
   _getResponsePlans(plans) {
