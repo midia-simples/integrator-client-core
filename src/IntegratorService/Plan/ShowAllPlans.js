@@ -4,20 +4,21 @@ import { cpfMask, cnpjMask } from '~/util/documentMasks';
 
 class ShowAllPlans {
   async run({ codcli }) {
-    const data = {
+    const response = await Integrator.View.execute({
       _consulta: '012I0L9WDV',
       codcli,
-    };
-    const response = await Integrator.View.execute(data);
+    });
 
-    return this._getResponsePlans(response.list);
+    console.log(response);
+
+    return this._getResponsePlans(response.data?.results);
   }
 
   _getResponsePlans(plans) {
     return plans
-      .filter(
+      ?.filter(
         (plano) => plano.status_150.trim() === 'Serviço Habilitado',
-      ).map((item) => ({
+      )?.map((item) => ({
         nome_plano: item.nome_do_plano_200,
         codigo_plano: item.codigo_plano,
         status_plano: item.status_150.trim(),
