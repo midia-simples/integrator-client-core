@@ -11,6 +11,8 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _dateToBR = _interopRequireDefault(require("../../util/dateToBR"));
 
+var _ptBR = _interopRequireDefault(require("date-fns/locale/pt-BR"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class ListBoletos {
@@ -31,15 +33,24 @@ class ListBoletos {
 
     if (data.data) {
       const list = data.data.results;
-      return list.map(fatura => ({
-        tipo: fatura.histo_fat,
-        codfat: fatura.codfat,
-        data_lancamento: fatura.data_lan,
-        data_vencimento: fatura.data_ven,
-        dias_pos_vencimento: fatura.dias,
-        valor: fatura.valor,
-        pago: fatura.Saldo === '0.00'
-      }));
+      return list.map(fatura => {
+        const dueSplit = fatura.data_ven.split('/');
+        const validDue = `${dueSplit[1]}/${dueSplit[0]}/${dueSplit[2]}`;
+        const formattedDue = (0, _dateFns.format)(new Date(validDue), "d 'de' LLLL", {
+          locale: _ptBR.default
+        });
+        return {
+          tipo: fatura.histo_fat,
+          codfat: fatura.codfat,
+          data_lancamento: fatura.data_lan,
+          data_vencimento: fatura.data_ven,
+          data_vencimento_valido: validDue,
+          data_vencimento_formatado: formattedDue,
+          dias_pos_vencimento: fatura.dias,
+          valor: fatura.valor,
+          pago: fatura.Saldo === '0.00'
+        };
+      });
     }
 
     return [];
