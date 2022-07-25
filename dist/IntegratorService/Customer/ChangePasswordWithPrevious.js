@@ -24,6 +24,12 @@ class ChangePasswordWithPrevious {
     previousPassword
   }) {
     const documentNum = (0, _removeNotNumbers.removeNotNumbers)(document);
+    const {
+      passwordIntegrator
+    } = await _GetPasswordCustomer.default.run({
+      document
+    });
+    if (passwordIntegrator !== previousPassword) throw new _ServiceError.default(500, 'Senhas não conferem');
     const documentIsCpf = documentNum.length === 11;
     const response = await _Integrator.default.Customer.changePassword({
       senha_ant: previousPassword,
@@ -31,12 +37,13 @@ class ChangePasswordWithPrevious {
       tipoPessoa: documentIsCpf ? 'F' : 'J',
       cpfCnpj: documentIsCpf ? (0, _documentMasks.cpfMask)(documentNum) : (0, _documentMasks.cnpjMask)(documentNum)
     });
+    console.log(response);
     if (!response.error) return;
     throw new _ServiceError.default(500, 'Não foi possível alterar a senha');
   }
 
 }
 
-var _default = new ChangePassword();
+var _default = new ChangePasswordWithPrevious();
 
 exports.default = _default;
