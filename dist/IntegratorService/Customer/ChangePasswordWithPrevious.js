@@ -37,7 +37,6 @@ class ChangePasswordWithPrevious {
       tipoPessoa: documentIsCpf ? 'F' : 'J',
       cpfCnpj: documentIsCpf ? (0, _documentMasks.cpfMask)(documentNum) : (0, _documentMasks.cnpjMask)(documentNum)
     });
-    console.log(response);
     if (!response.error) return;
     throw new _ServiceError.default(500, 'Não foi possível alterar a senha');
   }
