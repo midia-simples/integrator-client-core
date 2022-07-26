@@ -9,6 +9,8 @@ var _AttendenceListTypes = _interopRequireDefault(require("./Attendence/Attenden
 
 var _ChangePassword = _interopRequireDefault(require("./Customer/ChangePassword"));
 
+var _ChangePasswordWithPrevious = _interopRequireDefault(require("./Customer/ChangePasswordWithPrevious"));
+
 var _GetCustomerEmail = _interopRequireDefault(require("./Customer/GetCustomerEmail"));
 
 var _GetPasswordCustomer = _interopRequireDefault(require("./Customer/GetPasswordCustomer"));
@@ -60,6 +62,7 @@ var _default = {
   GetPasswordCustomer: _GetPasswordCustomer.default,
   GetSpeedServices: _GetSpeedServices.default,
   ChangePassword: _ChangePassword.default,
+  ChangePasswordWithPrevious: _ChangePasswordWithPrevious.default,
   ListContactData: _ListContactData.default,
   SaveContactData: _SaveContactData.default,
   ListBoletos: _ListBoletos.default,

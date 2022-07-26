@@ -1,6 +1,7 @@
 import AttendenceListTypes from './Attendence/AttendenceListTypes';
 
 import ChangePassword from './Customer/ChangePassword';
+import ChangePasswordWithPrevious from './Customer/ChangePasswordWithPrevious';
 import GetCustomerEmail from './Customer/GetCustomerEmail';
 import GetPasswordCustomer from './Customer/GetPasswordCustomer';
 import GetCustomerWithStatus from './Customer/GetCustomerWithStatus';
@@ -39,6 +40,7 @@ export default {
   GetPasswordCustomer,
   GetSpeedServices,
   ChangePassword,
+  ChangePasswordWithPrevious,
   ListContactData,
   SaveContactData,
   ListBoletos,
