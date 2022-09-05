@@ -9,6 +9,9 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @deprecated Use o FilterPlans no lugar
+ */
 class ShowAllPlans {
   async run({
     codcli

@@ -1,5 +1,8 @@
 import Integrator from '~/API/Integrator';
 
+/**
+ * @deprecated Use o FilterPlans no lugar
+ */
 class ShowAllPlans {
   async run({ codcli }) {
     const { data } = await Integrator.View.execute({
