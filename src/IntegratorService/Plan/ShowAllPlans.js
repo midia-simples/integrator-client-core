@@ -1,7 +1,8 @@
 import Integrator from '~/API/Integrator';
 
-import { cpfMask, cnpjMask } from '~/util/documentMasks';
-
+/**
+ * @deprecated Use o FilterPlans no lugar
+ */
 class ShowAllPlans {
   async run({ codcli }) {
     const { data } = await Integrator.View.execute({

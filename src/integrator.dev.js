@@ -1,4 +1,4 @@
-import { IntegratorService, config } from './index';
+import { config } from './index';
 import 'dotenv/config';
 
 async function dev() {

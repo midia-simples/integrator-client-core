@@ -51,6 +51,8 @@ var _OpenTicket = _interopRequireDefault(require("./Ticket/OpenTicket"));
 
 var _AddAnexoOnTicket = _interopRequireDefault(require("./Ticket/AddAnexoOnTicket"));
 
+var _FilterPlans = _interopRequireDefault(require("./Plan/FilterPlans"));
+
 var _ShowAllPlans = _interopRequireDefault(require("./Plan/ShowAllPlans"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -76,6 +78,7 @@ var _default = {
   PlanIsAvailable: _PlanIsAvailable.default,
   EnablePlanProvisional: _EnablePlanProvisional.default,
   OpenTicket: _OpenTicket.default,
+  FilterPlans: _FilterPlans.default,
   ShowAllPlans: _ShowAllPlans.default,
   RetrieveEmails: _RetrieveEmails.default,
   AttendenceListTypes: _AttendenceListTypes.default,
