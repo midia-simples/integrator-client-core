@@ -31,6 +31,7 @@ import EnablePlanProvisional from './PlanProvisional/EnablePlanProvisional';
 import OpenTicket from './Ticket/OpenTicket';
 import AddAnexoOnTicket from './Ticket/AddAnexoOnTicket';
 
+import FilterPlans from './Plan/FilterPlans';
 import ShowAllPlans from './Plan/ShowAllPlans';
 
 export default {
@@ -54,6 +55,7 @@ export default {
   PlanIsAvailable,
   EnablePlanProvisional,
   OpenTicket,
+  FilterPlans,
   ShowAllPlans,
   RetrieveEmails,
   AttendenceListTypes,

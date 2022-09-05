@@ -1,8 +1,7 @@
-import { subYears, addYears } from 'date-fns';
+import { subYears, addYears, format } from 'date-fns';
+import ptBr from 'date-fns/locale/pt-BR';
 import Integrator from '~/API/Integrator';
 import dateToBR from '~/util/dateToBR';
-import { format } from 'date-fns';
-import ptBr from 'date-fns/locale/pt-BR';
 
 class ListBoletos {
   async run({ codcli }) {
