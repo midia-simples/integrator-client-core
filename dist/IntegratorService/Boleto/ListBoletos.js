@@ -7,11 +7,11 @@ exports.default = void 0;
 
 var _dateFns = require("date-fns");
 
+var _ptBR = _interopRequireDefault(require("date-fns/locale/pt-BR"));
+
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _dateToBR = _interopRequireDefault(require("../../util/dateToBR"));
-
-var _ptBR = _interopRequireDefault(require("date-fns/locale/pt-BR"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
