@@ -11,7 +11,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 class FilterPlans {
   async run({
-    codcli
+    codcli,
+    status
   }) {
     var _data$data;
 
@@ -21,7 +22,7 @@ class FilterPlans {
       _consulta: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
       codcli
     });
-    return this.getResponsePlans((_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results);
+    return this.getResponsePlans((_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results, status);
   }
 
   formatPlan(plan) {

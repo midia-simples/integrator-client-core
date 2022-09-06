@@ -1,13 +1,13 @@
 import Integrator from '~/API/Integrator';
 
 class FilterPlans {
-  async run({ codcli }) {
+  async run({ codcli, status }) {
     const { data } = await Integrator.View.execute({
       _consulta: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
       codcli,
     });
 
-    return this.getResponsePlans(data.data?.results);
+    return this.getResponsePlans(data.data?.results, status);
   }
 
   formatPlan(plan) {
