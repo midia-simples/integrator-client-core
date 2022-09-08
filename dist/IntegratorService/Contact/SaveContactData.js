@@ -9,6 +9,8 @@ var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 
+var _removeNotNumbers = require("../../util/removeNotNumbers");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class SaveContactData {
@@ -30,7 +32,7 @@ class SaveContactData {
       await _Integrator.default.Datasource.salvarContatoCliente({
         codco_cl,
         e_mail,
-        celular
+        celular: (0, _removeNotNumbers.removeNotNumbers)(celular)
       });
       return {
         msg: 'Dados atualizados'

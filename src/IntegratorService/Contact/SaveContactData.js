@@ -1,6 +1,8 @@
 import Integrator from '~/API/Integrator';
 import ServiceError from '~/util/ServiceError';
 
+import { removeNotNumbers } from '~/util/removeNotNumbers';
+
 class SaveContactData {
   async run({ codcli, e_mail, celular }) {
     const { data: contactsList } = await Integrator.Contact.list({
@@ -11,7 +13,7 @@ class SaveContactData {
       await Integrator.Datasource.salvarContatoCliente({
         codco_cl,
         e_mail,
-        celular,
+        celular: removeNotNumbers(celular),
       });
       return { msg: 'Dados atualizados' };
     }

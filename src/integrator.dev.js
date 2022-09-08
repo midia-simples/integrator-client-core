@@ -1,3 +1,4 @@
+import IntegratorService from './IntegratorService';
 import { config } from './index';
 import 'dotenv/config';
 
@@ -10,6 +11,8 @@ async function dev() {
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
+
+  console.log(await IntegratorService.ListContactData.run({ codcli: 5619 }));
 }
 
 dev();
