@@ -7,8 +7,6 @@ exports.default = void 0;
 
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
-var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
-
 var _removeNotNumbers = require("../../util/removeNotNumbers");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -19,9 +17,6 @@ class SaveContactData {
     e_mail,
     celular
   }) {
-    const {
-      codco_cl
-    } = contactsList.data.results[0];
     await _Integrator.default.Datasource.salvarContatoCliente({
       codcli,
       e_mail,
