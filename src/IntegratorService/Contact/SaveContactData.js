@@ -5,20 +5,13 @@ import { removeNotNumbers } from '~/util/removeNotNumbers';
 
 class SaveContactData {
   async run({ codcli, e_mail, celular }) {
-    const { data: contactsList } = await Integrator.Contact.list({
+    const { codco_cl } = contactsList.data.results[0];
+    await Integrator.Datasource.salvarContatoCliente({
       codcli,
+      e_mail,
+      celular: removeNotNumbers(celular),
     });
-    if (contactsList.data.results) {
-      const { codco_cl } = contactsList.data.results[0];
-      await Integrator.Datasource.salvarContatoCliente({
-        codcli,
-        codco_cl,
-        e_mail,
-        celular: removeNotNumbers(celular),
-      });
-      return { msg: 'Dados atualizados' };
-    }
-    throw new ServiceError(500, 'Erro desconhecido');
+    return { msg: 'Dados atualizados' };
   }
 }
 
