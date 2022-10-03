@@ -20,27 +20,16 @@ class SaveContactData {
     celular
   }) {
     const {
-      data: contactsList
-    } = await _Integrator.default.Contact.list({
-      codcli
+      codco_cl
+    } = contactsList.data.results[0];
+    await _Integrator.default.Datasource.salvarContatoCliente({
+      codcli,
+      e_mail,
+      celular: (0, _removeNotNumbers.removeNotNumbers)(celular)
     });
-
-    if (contactsList.data.results) {
-      const {
-        codco_cl
-      } = contactsList.data.results[0];
-      await _Integrator.default.Datasource.salvarContatoCliente({
-        codcli,
-        codco_cl,
-        e_mail,
-        celular: (0, _removeNotNumbers.removeNotNumbers)(celular)
-      });
-      return {
-        msg: 'Dados atualizados'
-      };
-    }
-
-    throw new _ServiceError.default(500, 'Erro desconhecido');
+    return {
+      msg: 'Dados atualizados'
+    };
   }
 
 }
