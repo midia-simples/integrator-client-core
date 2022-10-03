@@ -30,6 +30,7 @@ class SaveContactData {
         codco_cl
       } = contactsList.data.results[0];
       await _Integrator.default.Datasource.salvarContatoCliente({
+        codcli,
         codco_cl,
         e_mail,
         celular: (0, _removeNotNumbers.removeNotNumbers)(celular)

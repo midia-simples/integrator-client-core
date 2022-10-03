@@ -11,6 +11,7 @@ class SaveContactData {
     if (contactsList.data.results) {
       const { codco_cl } = contactsList.data.results[0];
       await Integrator.Datasource.salvarContatoCliente({
+        codcli,
         codco_cl,
         e_mail,
         celular: removeNotNumbers(celular),
