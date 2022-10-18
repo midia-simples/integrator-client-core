@@ -23,6 +23,7 @@ class Client {
         headers: {
           'Content-Type': 'application/json',
           'Accept-Encoding': 'gzip',
+          ApplicationV: 'Integrator/6',
           ...additionalHeaders
         }
       });
