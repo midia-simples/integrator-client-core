@@ -28,6 +28,7 @@ class ListBoletos {
         return {
           tipo: fatura.histo_fat,
           codfat: fatura.codfat,
+          descri: fatura.descri_cob,
           data_lancamento: fatura.data_lan,
           data_vencimento: fatura.data_ven,
           data_vencimento_valido: validDue,
