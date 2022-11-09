@@ -12,10 +12,12 @@ import Ged from './resources/Ged';
 import AuthorizationLogin from './resources/AuthorizationLogin';
 import ConnectionExtract from './resources/ConnectionExtract';
 import Service from './resources/Service';
+import Cidades from './resources/Cidades';
 
 export default {
   Bill,
   NotaFiscal,
+  Cidades,
   Customer,
   Contact,
   Provisional,

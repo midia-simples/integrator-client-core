@@ -33,11 +33,14 @@ var _ConnectionExtract = _interopRequireDefault(require("./resources/ConnectionE
 
 var _Service = _interopRequireDefault(require("./resources/Service"));
 
+var _Cidades = _interopRequireDefault(require("./resources/Cidades"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
   Bill: _Bill.default,
   NotaFiscal: _NotaFiscal.default,
+  Cidades: _Cidades.default,
   Customer: _Customer.default,
   Contact: _Contact.default,
   Provisional: _Provisional.default,
