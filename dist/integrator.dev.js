@@ -4,6 +4,7 @@ var _index = require("./index");
 
 require("dotenv/config");
 
+// import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 async function dev() {
   _index.config.setConfig({
     host: process.env.API_INTEGRATOR_HOST_NAME,
@@ -12,7 +13,9 @@ async function dev() {
     pass: process.env.API_INTEGRATOR_PASS,
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE
-  });
+  }); // const data = await GetBoletoData.run({ codfat: '' });
+  // console.log(data);
+
 }
 
 dev();
