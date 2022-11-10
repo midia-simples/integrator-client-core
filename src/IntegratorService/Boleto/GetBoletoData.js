@@ -17,8 +17,10 @@ class GetBoletoData {
 
     const { host } = config.getConfig();
 
+    const codigoBarrasItem = Array.isArray(resultsLinha) ? resultsLinha[0] : resultsLinha;
+
     return {
-      linha: resultsLinha[0].codigo_barras,
+      linha: codigoBarrasItem.codigo_barras,
       download: `${host}/${resultsDownload[0].linkBoleto}`,
     };
   }
