@@ -8,7 +8,7 @@ class Service extends Resource {
   detail(data) {
     return this.request('service.detail', data);
   }
-  
+
   details(data) {
     return this.request('services.details', data);
   }
