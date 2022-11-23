@@ -10,7 +10,7 @@ class Provisional extends Resource {
   }
   
   executeVelocidade({ codsercli, modulo }) {
-    return this.request('habilitacaoProvisoria.execute', { codsercli, modulo });
+    return this.request('habilitacaoProvisoriaVelocidade.execute', { codsercli, modulo });
   }
 }
 
