@@ -20,10 +20,12 @@ class Provisional extends _Resource.default {
   }
 
   execute({
-    codsercli
+    codsercli,
+    modulo
   }) {
     return this.request('habilitacaoProvisoria.execute', {
-      codsercli
+      codsercli,
+      modulo
     });
   }
 

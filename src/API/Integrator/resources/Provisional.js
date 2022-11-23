@@ -5,8 +5,8 @@ class Provisional extends Resource {
     return this.request('services.details', { codcli, status: 'I' });
   }
 
-  execute({ codsercli }) {
-    return this.request('habilitacaoProvisoria.execute', { codsercli });
+  execute({ codsercli, modulo }) {
+    return this.request('habilitacaoProvisoria.execute', { codsercli, modulo });
   }
 }
 
