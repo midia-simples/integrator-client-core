@@ -33,7 +33,7 @@ class Provisional extends _Resource.default {
     codsercli,
     modulo
   }) {
-    return this.request('habilitacaoProvisoria.execute', {
+    return this.request('habilitacaoProvisoriaVelocidade.execute', {
       codsercli,
       modulo
     });
