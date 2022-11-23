@@ -29,6 +29,16 @@ class Provisional extends _Resource.default {
     });
   }
 
+  executeVelocidade({
+    codsercli,
+    modulo
+  }) {
+    return this.request('habilitacaoProvisoria.execute', {
+      codsercli,
+      modulo
+    });
+  }
+
 }
 
 var _default = new Provisional();
