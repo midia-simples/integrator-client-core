@@ -39,11 +39,13 @@ class Datasource extends _Resource.default {
   }
 
   salvarContatoCliente({
+    codcli,
     codco_cl,
     e_mail,
     celular
   }) {
     return this.request('datasource.salvar_contato_cliente', {
+      codcli,
       codco_cl,
       e_mail,
       celular
