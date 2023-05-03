@@ -49,6 +49,9 @@ class ListBoletos {
           data_vencimento_formatado: formattedDue,
           dias_pos_vencimento: fatura.dias,
           valor: fatura.valor,
+          valor_com_juros: fatura.valor_com_juros,
+          juros: fatura.juros,
+          multa: fatura.multa,
           pago: fatura.Saldo === '0.00'
         };
       });
