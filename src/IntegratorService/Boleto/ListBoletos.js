@@ -35,6 +35,7 @@ class ListBoletos {
           data_vencimento_formatado: formattedDue,
           dias_pos_vencimento: fatura.dias,
           valor: fatura.valor,
+          valor_final: fatura.valor_final,
           valor_com_juros: fatura.valor_com_juros,
           juros: fatura.juros,
           multa: fatura.multa,
