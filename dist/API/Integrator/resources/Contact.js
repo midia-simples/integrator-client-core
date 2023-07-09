@@ -14,6 +14,10 @@ class Contacts extends _Resource.default {
     return this.request('contacts.list', data);
   }
 
+  edit(data) {
+    return this.execute('contact.edit', data);
+  }
+
 }
 
 var _default = new Contacts();

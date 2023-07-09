@@ -21,6 +21,12 @@ class Resource {
     return response;
   }
 
+  async execute(methodName, params) {
+    const body = this.client.createBody('execute', methodName, params);
+    const response = await this.api(body);
+    return response;
+  }
+
 }
 
 var _default = Resource;
