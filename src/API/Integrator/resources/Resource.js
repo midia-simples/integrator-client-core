@@ -15,7 +15,6 @@ class Resource {
   async execute(methodName, params) {
     const body = this.client.createBody('execute', methodName, params);
     const response = await this.api(body);
-    console.log(response);
     return response;
   }
 }
