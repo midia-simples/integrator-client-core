@@ -24,7 +24,8 @@ class ListContactData {
     if (contactsList.data.results) {
       return contactsList.data.results.map(contact => ({
         e_mail: contact.e_mail,
-        celular: contact.celular
+        celular: contact.celular,
+        codco_cl_p: contact.codco_cl_p
       }));
     }
 
