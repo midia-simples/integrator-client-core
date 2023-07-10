@@ -25,6 +25,8 @@ var _ListContactData = _interopRequireDefault(require("./Contact/ListContactData
 
 var _SaveContactData = _interopRequireDefault(require("./Contact/SaveContactData"));
 
+var _EditContactData = _interopRequireDefault(require("./Contact/EditContactData"));
+
 var _RetrieveEmails = _interopRequireDefault(require("./Email/RetrieveEmails"));
 
 var _ListBoletos = _interopRequireDefault(require("./Boleto/ListBoletos"));
@@ -65,6 +67,7 @@ var _default = {
   GetSpeedServices: _GetSpeedServices.default,
   ChangePassword: _ChangePassword.default,
   ChangePasswordWithPrevious: _ChangePasswordWithPrevious.default,
+  EditContactData: _EditContactData.default,
   ListContactData: _ListContactData.default,
   SaveContactData: _SaveContactData.default,
   ListBoletos: _ListBoletos.default,
