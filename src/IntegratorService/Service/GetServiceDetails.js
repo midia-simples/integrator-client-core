@@ -8,7 +8,7 @@ class GetServiceDetails {
       codsercli,
     });
     if (data.data) {
-      const { nome_cid, endereco, bairro } = data?.data?.results?.row;
+      const { nome_cid, endereco, bairro } = data?.data?.results;
       return {
         nome_cid: safeDecode(nome_cid),
         endereco: safeDecode(endereco),
