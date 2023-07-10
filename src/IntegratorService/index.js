@@ -10,6 +10,7 @@ import GetSpeedServices from './Service/GetSpeedServices';
 
 import ListContactData from './Contact/ListContactData';
 import SaveContactData from './Contact/SaveContactData';
+import EditContactData from './Contact/EditContactData';
 
 import RetrieveEmails from './Email/RetrieveEmails';
 
@@ -42,6 +43,7 @@ export default {
   GetSpeedServices,
   ChangePassword,
   ChangePasswordWithPrevious,
+  EditContactData,
   ListContactData,
   SaveContactData,
   ListBoletos,
