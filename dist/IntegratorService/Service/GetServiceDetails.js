@@ -24,13 +24,13 @@ class GetServiceDetails {
     });
 
     if (data.data) {
-      var _data$data, _data$data$results;
+      var _data$data;
 
       const {
         nome_cid,
         endereco,
         bairro
-      } = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : (_data$data$results = _data$data.results) === null || _data$data$results === void 0 ? void 0 : _data$data$results.row;
+      } = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results;
       return {
         nome_cid: (0, _utf.safeDecode)(nome_cid),
         endereco: (0, _utf.safeDecode)(endereco),
