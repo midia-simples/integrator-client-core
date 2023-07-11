@@ -1,6 +1,6 @@
 import { config } from './index';
 import 'dotenv/config';
-// import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
+import ListActiveServices from './IntegratorService/Service/ListActiveServices';
 
 async function dev() {
   config.setConfig({
@@ -12,7 +12,10 @@ async function dev() {
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
 
-  // const data = await GetBoletoData.run({ codfat: '' });
+  const data = await ListActiveServices.run({
+    codcli: '50553',
+    statusQuery: { getEqual: false, text: 'Cancelado' },
+  });
   // console.log(data);
 }
 

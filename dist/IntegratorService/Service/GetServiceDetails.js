@@ -30,7 +30,7 @@ class GetServiceDetails {
         nome_cid,
         endereco,
         bairro
-      } = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results;
+      } = data === null || data === void 0 ? void 0 : (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results[0];
       return {
         nome_cid: (0, _utf.safeDecode)(nome_cid),
         endereco: (0, _utf.safeDecode)(endereco),
