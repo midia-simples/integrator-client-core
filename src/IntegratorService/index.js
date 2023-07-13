@@ -7,6 +7,7 @@ import GetPasswordCustomer from './Customer/GetPasswordCustomer';
 import GetCustomerWithStatus from './Customer/GetCustomerWithStatus';
 import GetCustomerInfo from './Customer/GetCustomerInfo';
 import GetSpeedServices from './Service/GetSpeedServices';
+import EditCustomerName from './Customer/EditCustomerName';
 
 import ListContactData from './Contact/ListContactData';
 import SaveContactData from './Contact/SaveContactData';
@@ -40,6 +41,7 @@ export default {
   GetCustomerInfo,
   GetCustomerWithStatus,
   GetPasswordCustomer,
+  EditCustomerName,
   GetSpeedServices,
   ChangePassword,
   ChangePasswordWithPrevious,
