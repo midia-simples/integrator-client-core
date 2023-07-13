@@ -13,6 +13,10 @@ class Customer extends Resource {
     return this.request('client.getInfo', { codcli });
   }
 
+  edit(data) {
+    return this.execute('client.edit', data);
+  }
+
   contacts({ codcli }) {
     return this.request('contacts.list', { codcli });
   }

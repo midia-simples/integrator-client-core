@@ -26,6 +26,10 @@ class Customer extends _Resource.default {
     });
   }
 
+  edit(data) {
+    return this.execute('client.edit', data);
+  }
+
   contacts({
     codcli
   }) {

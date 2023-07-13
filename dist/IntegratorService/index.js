@@ -21,6 +21,8 @@ var _GetCustomerInfo = _interopRequireDefault(require("./Customer/GetCustomerInf
 
 var _GetSpeedServices = _interopRequireDefault(require("./Service/GetSpeedServices"));
 
+var _EditCustomerName = _interopRequireDefault(require("./Customer/EditCustomerName"));
+
 var _ListContactData = _interopRequireDefault(require("./Contact/ListContactData"));
 
 var _SaveContactData = _interopRequireDefault(require("./Contact/SaveContactData"));
@@ -64,6 +66,7 @@ var _default = {
   GetCustomerInfo: _GetCustomerInfo.default,
   GetCustomerWithStatus: _GetCustomerWithStatus.default,
   GetPasswordCustomer: _GetPasswordCustomer.default,
+  EditCustomerName: _EditCustomerName.default,
   GetSpeedServices: _GetSpeedServices.default,
   ChangePassword: _ChangePassword.default,
   ChangePasswordWithPrevious: _ChangePasswordWithPrevious.default,
