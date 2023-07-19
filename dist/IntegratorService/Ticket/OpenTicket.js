@@ -20,6 +20,7 @@ class OpenTicket {
     codcli,
     codsercli,
     descri_oco,
+    codmvis = 'PROBLEMA',
     codusu,
     codocop,
     codcatoco
@@ -35,7 +36,7 @@ class OpenTicket {
       ...(codusu_d && {
         codusu_d
       }),
-      codmvis: 'PROBLEMA',
+      codmvis,
       descri_oco,
       codusu,
       codocop,
