@@ -4,14 +4,22 @@ import ServiceError from '~/util/ServiceError';
 
 class OpenTicket {
   async run({
-    codcar, codusu_d, codcli, codsercli, descri_oco, codusu, codocop, codcatoco,
+    codcar,
+    codusu_d,
+    codcli,
+    codsercli,
+    descri_oco,
+    codmvis = 'PROBLEMA',
+    codusu,
+    codocop,
+    codcatoco,
   }) {
     const { data } = await Integrator.Datasource.criarAtendimento({
       codcli,
       codsercli,
       ...(codcar && { codcar }),
       ...(codusu_d && { codusu_d }),
-      codmvis: 'PROBLEMA',
+      codmvis,
       descri_oco,
       codusu,
       codocop,
@@ -23,8 +31,8 @@ class OpenTicket {
     if (error) {
       throw new ServiceError(400, exception);
     } else if (
-      (typeof data === 'string' && !isJSON(data))
-      || !data.data.results
+      (typeof data === 'string' && !isJSON(data)) ||
+      !data.data.results
     ) {
       throw new ServiceError(400, 'Não foi possível abrir um atendimento');
     }
