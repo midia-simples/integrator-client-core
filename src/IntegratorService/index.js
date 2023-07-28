@@ -35,6 +35,7 @@ import AddAnexoOnTicket from './Ticket/AddAnexoOnTicket';
 
 import FilterPlans from './Plan/FilterPlans';
 import ShowAllPlans from './Plan/ShowAllPlans';
+import ListPlans from './Plan/ListPlans';
 
 export default {
   GetCustomerEmail,
@@ -64,4 +65,5 @@ export default {
   RetrieveEmails,
   AttendenceListTypes,
   AddAnexoOnTicket,
+  ListPlans,
 };
