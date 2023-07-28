@@ -35,6 +35,8 @@ var _Service = _interopRequireDefault(require("./resources/Service"));
 
 var _Cidades = _interopRequireDefault(require("./resources/Cidades"));
 
+var _Plan = _interopRequireDefault(require("./resources/Plan"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -52,6 +54,7 @@ var _default = {
   Ged: _Ged.default,
   AuthorizationLogin: _AuthorizationLogin.default,
   ConnectionExtract: _ConnectionExtract.default,
-  Service: _Service.default
+  Service: _Service.default,
+  Plan: _Plan.default
 };
 exports.default = _default;

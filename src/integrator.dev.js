@@ -1,6 +1,7 @@
 import { config } from './index';
 import 'dotenv/config';
 import ListActiveServices from './IntegratorService/Service/ListActiveServices';
+import ListPlans from './IntegratorService/Plan/ListPlans';
 
 async function dev() {
   config.setConfig({
@@ -12,11 +13,16 @@ async function dev() {
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
 
-  const data = await ListActiveServices.run({
-    codcli: '50553',
-    statusQuery: { getEqual: false, text: 'Cancelado' },
+  // const dataList = await ListActiveServices.run({
+  //   codcli: '50553',
+  //   statusQuery: { getEqual: false, text: 'Cancelado' },
+  // });
+  // console.log('ListActiveServices', dataList);
+
+  const data = await ListPlans.run({
+    ibge_cidade: '5100250',
   });
-  // console.log(data);
+  console.log('ListPlans', data);
 }
 
 dev();

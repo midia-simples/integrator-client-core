@@ -13,6 +13,7 @@ import AuthorizationLogin from './resources/AuthorizationLogin';
 import ConnectionExtract from './resources/ConnectionExtract';
 import Service from './resources/Service';
 import Cidades from './resources/Cidades';
+import Plan from './resources/Plan';
 
 export default {
   Bill,
@@ -30,4 +31,5 @@ export default {
   AuthorizationLogin,
   ConnectionExtract,
   Service,
+  Plan,
 };
