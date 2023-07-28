@@ -59,6 +59,8 @@ var _FilterPlans = _interopRequireDefault(require("./Plan/FilterPlans"));
 
 var _ShowAllPlans = _interopRequireDefault(require("./Plan/ShowAllPlans"));
 
+var _ListPlans = _interopRequireDefault(require("./Plan/ListPlans"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -88,6 +90,7 @@ var _default = {
   ShowAllPlans: _ShowAllPlans.default,
   RetrieveEmails: _RetrieveEmails.default,
   AttendenceListTypes: _AttendenceListTypes.default,
-  AddAnexoOnTicket: _AddAnexoOnTicket.default
+  AddAnexoOnTicket: _AddAnexoOnTicket.default,
+  ListPlans: _ListPlans.default
 };
 exports.default = _default;
