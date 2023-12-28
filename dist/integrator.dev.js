@@ -4,9 +4,11 @@ var _index = require("./index");
 
 require("dotenv/config");
 
-var _ListActiveServices = _interopRequireDefault(require("./IntegratorService/Service/ListActiveServices"));
+var _ListContactData = _interopRequireDefault(require("./IntegratorService/Contact/ListContactData"));
 
-var _ListPlans = _interopRequireDefault(require("./IntegratorService/Plan/ListPlans"));
+var _EditContactData = _interopRequireDefault(require("./IntegratorService/Contact/EditContactData"));
+
+var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/ListBoletos"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,12 +25,28 @@ async function dev() {
   //   statusQuery: { getEqual: false, text: 'Cancelado' },
   // });
   // console.log('ListActiveServices', dataList);
+  // const data = await ListPlans.run({
+  //   ibge_cidade: '5100250',
+  // });
+  // const resp = await SaveContactData.run({
+  //   codcli: '52854',
+  //   celular: '66999570111',
+  // });
+  // console.log('SaveContactData', resp);
+  // const resp = await EditContactData.run({
+  //   codcli: '52854',
+  //   codco_cl_p: '09XLXPHT2D',
+  //   // e_mail: 'teste0001@gmail.com',
+  //   celular: '',
+  // });
+  // console.log('EditContactData', resp);
 
 
-  const data = await _ListPlans.default.run({
-    ibge_cidade: '5100250'
-  });
-  console.log('ListPlans', data);
+  const data = await _ListBoletos.default.run({
+    codcli: '61194'
+  }); // const data = await ListContactData.categoryPhone();
+
+  console.log('ListBoletos', data);
 }
 
 dev();
