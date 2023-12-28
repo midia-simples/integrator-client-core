@@ -1,7 +1,8 @@
 import { config } from './index';
 import 'dotenv/config';
-import ListActiveServices from './IntegratorService/Service/ListActiveServices';
-import ListPlans from './IntegratorService/Plan/ListPlans';
+import ListContactData from './IntegratorService/Contact/ListContactData';
+import EditContactData from './IntegratorService/Contact/EditContactData';
+import ListBoletos from './IntegratorService/Boleto/ListBoletos';
 
 async function dev() {
   config.setConfig({
@@ -19,10 +20,33 @@ async function dev() {
   // });
   // console.log('ListActiveServices', dataList);
 
-  const data = await ListPlans.run({
-    ibge_cidade: '5100250',
+  // const data = await ListPlans.run({
+  //   ibge_cidade: '5100250',
+  // });
+
+  // const resp = await SaveContactData.run({
+  //   codcli: '52854',
+  //   celular: '66999570111',
+  // });
+
+  // console.log('SaveContactData', resp);
+
+  // const resp = await EditContactData.run({
+  //   codcli: '52854',
+  //   codco_cl_p: '09XLXPHT2D',
+  //   // e_mail: 'teste0001@gmail.com',
+  //   celular: '',
+  // });
+
+  // console.log('EditContactData', resp);
+
+  const data = await ListBoletos.run({
+    codcli: '61194',
   });
-  console.log('ListPlans', data);
+
+  // const data = await ListContactData.categoryPhone();
+
+  console.log('ListBoletos', data);
 }
 
 dev();

@@ -23,7 +23,9 @@ class ListBoletos {
         const dueSplit = fatura.data_ven.split('/');
         const validDue = `${dueSplit[1]}/${dueSplit[0]}/${dueSplit[2]}`;
 
-        const formattedDue = format(new Date(validDue), "d 'de' LLLL", { locale: ptBr });
+        const formattedDue = format(new Date(validDue), "d 'de' LLLL", {
+          locale: ptBr,
+        });
 
         return {
           tipo: fatura.histo_fat,
@@ -39,7 +41,7 @@ class ListBoletos {
           valor_com_juros: fatura.valor_com_juros,
           juros: fatura.juros,
           multa: fatura.multa,
-          pago: fatura.Saldo === '0.00',
+          pago: parseFloat(fatura.Saldo) <= 0,
         };
       });
     }
