@@ -1,4 +1,5 @@
 import AttendenceListTypes from './Attendence/AttendenceListTypes';
+import VerCadastro from './Cadastro/VerCadastro';
 
 import ChangePassword from './Customer/ChangePassword';
 import ChangePasswordWithPrevious from './Customer/ChangePasswordWithPrevious';
@@ -66,4 +67,5 @@ export default {
   AttendenceListTypes,
   AddAnexoOnTicket,
   ListPlans,
+  VerCadastro,
 };
