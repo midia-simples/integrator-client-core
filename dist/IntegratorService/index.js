@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _AttendenceListTypes = _interopRequireDefault(require("./Attendence/AttendenceListTypes"));
 
+var _VerCadastro = _interopRequireDefault(require("./Cadastro/VerCadastro"));
+
 var _ChangePassword = _interopRequireDefault(require("./Customer/ChangePassword"));
 
 var _ChangePasswordWithPrevious = _interopRequireDefault(require("./Customer/ChangePasswordWithPrevious"));
@@ -91,6 +93,7 @@ var _default = {
   RetrieveEmails: _RetrieveEmails.default,
   AttendenceListTypes: _AttendenceListTypes.default,
   AddAnexoOnTicket: _AddAnexoOnTicket.default,
-  ListPlans: _ListPlans.default
+  ListPlans: _ListPlans.default,
+  VerCadastro: _VerCadastro.default
 };
 exports.default = _default;
