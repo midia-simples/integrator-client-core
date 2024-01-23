@@ -43,6 +43,8 @@ class ListBoletos {
           tipo: fatura.histo_fat,
           codfat: fatura.codfat,
           descri: fatura.descri_cob,
+          data_baixa: fatura.data_bai,
+          data_baixa_date: new Date(fatura.data_bai),
           data_lancamento: fatura.data_lan,
           data_vencimento: fatura.data_ven,
           data_vencimento_valido: validDue,
