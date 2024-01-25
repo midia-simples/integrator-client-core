@@ -33,6 +33,8 @@ var _EditContactData = _interopRequireDefault(require("./Contact/EditContactData
 
 var _RetrieveEmails = _interopRequireDefault(require("./Email/RetrieveEmails"));
 
+var _RetrieveEmailsV = _interopRequireDefault(require("./Email/RetrieveEmailsV2"));
+
 var _ListBoletos = _interopRequireDefault(require("./Boleto/ListBoletos"));
 
 var _GetBoletoData = _interopRequireDefault(require("./Boleto/GetBoletoData"));
@@ -91,6 +93,7 @@ var _default = {
   FilterPlans: _FilterPlans.default,
   ShowAllPlans: _ShowAllPlans.default,
   RetrieveEmails: _RetrieveEmails.default,
+  RetrieveEmailsV2: _RetrieveEmailsV.default,
   AttendenceListTypes: _AttendenceListTypes.default,
   AddAnexoOnTicket: _AddAnexoOnTicket.default,
   ListPlans: _ListPlans.default,

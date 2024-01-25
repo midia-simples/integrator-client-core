@@ -1,8 +1,8 @@
 "use strict";
 
-var _index = require("./index");
+var _dotenv = _interopRequireDefault(require("dotenv"));
 
-require("dotenv/config");
+var _index = require("./index");
 
 var _ListContactData = _interopRequireDefault(require("./IntegratorService/Contact/ListContactData"));
 
@@ -10,7 +10,11 @@ var _EditContactData = _interopRequireDefault(require("./IntegratorService/Conta
 
 var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/ListBoletos"));
 
+var _RetrieveEmailsV = _interopRequireDefault(require("./IntegratorService/Email/RetrieveEmailsV2"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_dotenv.default.config();
 
 async function dev() {
   _index.config.setConfig({
@@ -40,13 +44,17 @@ async function dev() {
   //   celular: '',
   // });
   // console.log('EditContactData', resp);
+  // const data = await ListBoletos.run({
+  //  codcli: '61194',
+  // });
+  // const data = await ListContactData.categoryPhone();
+  // console.log('ListBoletos', data);
 
 
-  const data = await _ListBoletos.default.run({
-    codcli: '61194'
-  }); // const data = await ListContactData.categoryPhone();
-
-  console.log('ListBoletos', data);
+  const emails = await _RetrieveEmailsV.default.run({
+    document: ''
+  });
+  console.log(emails);
 }
 
 dev();

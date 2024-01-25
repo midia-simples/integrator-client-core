@@ -21,7 +21,9 @@ class Datasource extends Resource {
     return this.request('datasource.lista_emails', { codcli });
   }
 
-  salvarContatoCliente({ codcli, codco_cl, e_mail, celular }) {
+  salvarContatoCliente({
+    codcli, codco_cl, e_mail, celular,
+  }) {
     return this.request('datasource.salvar_contato_cliente', {
       codcli,
       codco_cl,
