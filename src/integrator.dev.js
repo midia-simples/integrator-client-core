@@ -52,7 +52,7 @@ async function dev() {
   // console.log('ListBoletos', data);
 
   const emails = await RetrieveEmailsV2.run({
-    document: '773.830.362-04',
+    document: '',
   });
   console.log(emails);
 }
