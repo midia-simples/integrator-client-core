@@ -15,6 +15,7 @@ import SaveContactData from './Contact/SaveContactData';
 import EditContactData from './Contact/EditContactData';
 
 import RetrieveEmails from './Email/RetrieveEmails';
+import RetrieveEmailsV2 from './Email/RetrieveEmailsV2';
 
 import ListBoletos from './Boleto/ListBoletos';
 import GetBoletoData from './Boleto/GetBoletoData';
@@ -64,6 +65,7 @@ export default {
   FilterPlans,
   ShowAllPlans,
   RetrieveEmails,
+  RetrieveEmailsV2,
   AttendenceListTypes,
   AddAnexoOnTicket,
   ListPlans,
