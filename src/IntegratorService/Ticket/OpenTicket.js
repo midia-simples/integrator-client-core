@@ -31,8 +31,8 @@ class OpenTicket {
     if (error) {
       throw new ServiceError(400, exception);
     } else if (
-      (typeof data === 'string' && !isJSON(data)) ||
-      !data.data.results
+      (typeof data === 'string' && !isJSON(data))
+      || !data.data.results
     ) {
       throw new ServiceError(400, 'Não foi possível abrir um atendimento');
     }

@@ -1,9 +1,7 @@
-import Integrator from '~/API/Integrator';
 import GetCustomerWithStatus from '../Customer/GetCustomerWithStatus';
-import GetCustomerEmail from '../Customer/GetCustomerEmail';
 import { removeNotNumbers } from '~/util/removeNotNumbers';
 import ServiceError from '~/util/ServiceError';
-import ListContactData from '~/../dist/IntegratorService/Contact/ListContactData';
+import ListContactData from '../Contact/ListContactData';
 
 class RetrieveEmailsV2 {
   emailsCensored(contacts) {
@@ -41,6 +39,7 @@ class RetrieveEmailsV2 {
       document: documentNum,
     });
     const contacts = await ListContactData.run({ codcli });
+    console.log(contacts);
     if (censored) return this.emailsCensored(contacts);
     return this.emailsRaw(contacts);
   }

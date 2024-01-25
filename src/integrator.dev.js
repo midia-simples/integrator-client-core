@@ -1,8 +1,11 @@
+import dotenv from 'dotenv';
 import { config } from './index';
-import 'dotenv/config';
 import ListContactData from './IntegratorService/Contact/ListContactData';
 import EditContactData from './IntegratorService/Contact/EditContactData';
 import ListBoletos from './IntegratorService/Boleto/ListBoletos';
+import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
+
+dotenv.config();
 
 async function dev() {
   config.setConfig({
@@ -40,13 +43,18 @@ async function dev() {
 
   // console.log('EditContactData', resp);
 
-  const data = await ListBoletos.run({
-    codcli: '61194',
-  });
+  // const data = await ListBoletos.run({
+  //  codcli: '61194',
+  // });
 
   // const data = await ListContactData.categoryPhone();
 
-  console.log('ListBoletos', data);
+  // console.log('ListBoletos', data);
+
+  const emails = await RetrieveEmailsV2.run({
+    document: '773.830.362-04',
+  });
+  console.log(emails);
 }
 
 dev();

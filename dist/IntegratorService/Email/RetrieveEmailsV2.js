@@ -5,17 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
-
 var _GetCustomerWithStatus = _interopRequireDefault(require("../Customer/GetCustomerWithStatus"));
-
-var _GetCustomerEmail = _interopRequireDefault(require("../Customer/GetCustomerEmail"));
 
 var _removeNotNumbers = require("../../util/removeNotNumbers");
 
 var _ServiceError = _interopRequireDefault(require("../../util/ServiceError"));
 
-var _ListContactData = _interopRequireDefault(require("../../../dist/IntegratorService/Contact/ListContactData"));
+var _ListContactData = _interopRequireDefault(require("../Contact/ListContactData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51,6 +47,7 @@ class RetrieveEmailsV2 {
     const contacts = await _ListContactData.default.run({
       codcli
     });
+    console.log(contacts);
     if (censored) return this.emailsCensored(contacts);
     return this.emailsRaw(contacts);
   }
