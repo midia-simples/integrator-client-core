@@ -52,7 +52,7 @@ async function dev() {
 
 
   const emails = await _RetrieveEmailsV.default.run({
-    document: '773.830.362-04'
+    document: ''
   });
   console.log(emails);
 }
