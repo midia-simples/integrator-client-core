@@ -8,6 +8,10 @@ class Bill extends Resource {
   details(data) {
     return this.request('fatura.detalhe', data);
   }
+
+  generatePix({ codfat }) {
+    return this.request('fatura.getPix', { codfat });
+  }
 }
 
 export default new Bill();

@@ -18,6 +18,14 @@ class Bill extends _Resource.default {
     return this.request('fatura.detalhe', data);
   }
 
+  generatePix({
+    codfat
+  }) {
+    return this.request('fatura.getPix', {
+      codfat
+    });
+  }
+
 }
 
 var _default = new Bill();
