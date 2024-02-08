@@ -37,6 +37,8 @@ var _RetrieveEmailsV = _interopRequireDefault(require("./Email/RetrieveEmailsV2"
 
 var _ListBoletos = _interopRequireDefault(require("./Boleto/ListBoletos"));
 
+var _GeneratePix = _interopRequireDefault(require("./Boleto/GeneratePix"));
+
 var _GetBoletoData = _interopRequireDefault(require("./Boleto/GetBoletoData"));
 
 var _GetBoletoPDF = _interopRequireDefault(require("./Boleto/GetBoletoPDF"));
@@ -80,6 +82,7 @@ var _default = {
   ListContactData: _ListContactData.default,
   SaveContactData: _SaveContactData.default,
   ListBoletos: _ListBoletos.default,
+  GeneratePix: _GeneratePix.default,
   GetBoletoData: _GetBoletoData.default,
   GetBoletoPDF: _GetBoletoPDF.default,
   ListNotaFiscal: _ListNotaFiscal.default,

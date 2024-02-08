@@ -18,6 +18,7 @@ import RetrieveEmails from './Email/RetrieveEmails';
 import RetrieveEmailsV2 from './Email/RetrieveEmailsV2';
 
 import ListBoletos from './Boleto/ListBoletos';
+import GeneratePix from './Boleto/GeneratePix';
 import GetBoletoData from './Boleto/GetBoletoData';
 import GetBoletoPDF from './Boleto/GetBoletoPDF';
 
@@ -52,6 +53,7 @@ export default {
   ListContactData,
   SaveContactData,
   ListBoletos,
+  GeneratePix,
   GetBoletoData,
   GetBoletoPDF,
   ListNotaFiscal,
