@@ -4,7 +4,7 @@ class GeneratePix {
   async run({ codfat }) {
     const response = await Integrator.Bill.generatePix({ codfat });
 
-    const slashes = /(\\|\/)/;
+    const slashes = /(\\|\/)/g;
 
     const results = response.data.data.results;
     const pixData = results[0];
