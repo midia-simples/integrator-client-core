@@ -22,8 +22,8 @@ class GeneratePix {
     const qrcode = pixData.imagemQrcode.split(',');
     const textPix = pixData.textoImagemQRcode;
     const metadata = qrcode[0];
-    const payload = qrcode[1].replace(slashes, '');
-    const image = `${metadata}/${payload}`;
+    const payload = qrcode[1].replaceAll(slashes, '');
+    const image = `${metadata},${payload}`;
     return {
       image,
       textPix
