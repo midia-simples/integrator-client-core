@@ -16,7 +16,7 @@ class GeneratePix {
     const response = await _Integrator.default.Bill.generatePix({
       codfat
     });
-    const slashes = /(\\|\/)/g;
+    const slashes = /(\\)/g;
     const results = response.data.data.results;
     const pixData = results[0];
     const qrcode = pixData.imagemQrcode.split(',');
