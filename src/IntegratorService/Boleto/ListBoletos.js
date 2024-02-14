@@ -27,6 +27,8 @@ class ListBoletos {
           locale: ptBr,
         });
 
+        const saldoFloat = parseFloat(fatura.Saldo || fatura.saldo);
+
         return {
           tipo: fatura.histo_fat,
           codfat: fatura.codfat,
@@ -43,7 +45,7 @@ class ListBoletos {
           valor_com_juros: fatura.valor_com_juros,
           juros: fatura.juros,
           multa: fatura.multa,
-          pago: parseFloat(fatura.saldo) <= 0,
+          pago: saldoFloat <= 0,
           pix: fatura.usa_pix === 'S',
         };
       });
