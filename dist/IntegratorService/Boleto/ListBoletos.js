@@ -17,17 +17,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 class ListBoletos {
   async run({
-    codcli
+    codcli,
+    from,
+    to
   }) {
-    const todayPlusYears = (0, _dateFns.addYears)(new Date(), 2);
-    const twoYearAgo = (0, _dateFns.subYears)(new Date(), 2);
-    const todayBR = (0, _dateToBR.default)(todayPlusYears);
-    const twoYearAgoBR = (0, _dateToBR.default)(twoYearAgo);
+    const toSelected = to || (0, _dateFns.addYears)(new Date(), 2);
+    const fromSelected = from || (0, _dateFns.subYears)(new Date(), 2);
+    const todayBR = (0, _dateToBR.default)(toSelected);
+    const fromSelectedBR = (0, _dateToBR.default)(fromSelected);
     const {
       data
     } = await _Integrator.default.Bill.list({
       codcli,
-      from: twoYearAgoBR,
+      from: fromSelectedBR,
       to: todayBR
     });
 

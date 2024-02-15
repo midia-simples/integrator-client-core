@@ -4,16 +4,16 @@ import Integrator from '~/API/Integrator';
 import dateToBR from '~/util/dateToBR';
 
 class ListBoletos {
-  async run({ codcli }) {
-    const todayPlusYears = addYears(new Date(), 2);
-    const twoYearAgo = subYears(new Date(), 2);
+  async run({ codcli, from, to }) {
+    const toSelected = to || addYears(new Date(), 2);
+    const fromSelected = from || subYears(new Date(), 2);
 
-    const todayBR = dateToBR(todayPlusYears);
-    const twoYearAgoBR = dateToBR(twoYearAgo);
+    const todayBR = dateToBR(toSelected);
+    const fromSelectedBR = dateToBR(fromSelected);
 
     const { data } = await Integrator.Bill.list({
       codcli,
-      from: twoYearAgoBR,
+      from: fromSelectedBR,
       to: todayBR,
     });
     if (data.data) {
