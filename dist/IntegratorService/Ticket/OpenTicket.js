@@ -20,6 +20,10 @@ class OpenTicket {
     codcli,
     codsercli,
     descri_oco,
+    tipo_contato = 'Telefonico',
+    celular,
+    nome,
+    email,
     codmvis = 'PROBLEMA',
     codusu,
     codocop,
@@ -36,6 +40,10 @@ class OpenTicket {
       ...(codusu_d && {
         codusu_d
       }),
+      nome_contato: nome,
+      celular_resposta: celular,
+      email_resposta: email,
+      tipo_contato,
       codmvis,
       descri_oco,
       codusu,
