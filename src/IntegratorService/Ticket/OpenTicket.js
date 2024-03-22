@@ -18,6 +18,7 @@ class OpenTicket {
     codusu,
     codocop,
     codcatoco,
+    oco_criar_sms = 'S',
   }) {
     const { data } = await Integrator.Datasource.criarAtendimento({
       codcli,
@@ -28,12 +29,14 @@ class OpenTicket {
       nome_contato: nome,
       celular_resposta: celular,
       email_resposta: email,
+      fone_resposta: '',
       tipo_contato,
       codmvis,
       descri_oco,
       codusu,
       codocop,
       codcatoco,
+      oco_criar_sms,
     });
 
     const { error, exception } = data;

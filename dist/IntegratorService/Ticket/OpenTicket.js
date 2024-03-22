@@ -28,7 +28,8 @@ class OpenTicket {
     codmvis = 'PROBLEMA',
     codusu,
     codocop,
-    codcatoco
+    codcatoco,
+    oco_criar_sms = 'S'
   }) {
     const {
       data
@@ -47,12 +48,14 @@ class OpenTicket {
       nome_contato: nome,
       celular_resposta: celular,
       email_resposta: email,
+      fone_resposta: '',
       tipo_contato,
       codmvis,
       descri_oco,
       codusu,
       codocop,
-      codcatoco
+      codcatoco,
+      oco_criar_sms
     });
     const {
       error,
