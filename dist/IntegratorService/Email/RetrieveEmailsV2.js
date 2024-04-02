@@ -22,12 +22,12 @@ class RetrieveEmailsV2 {
       return `*******${prefix.slice(prefix.length - 3, prefix.length)}@${domain}`;
     }
 
-    const filteredEmails = contacts.map(emailObject => emailObject.e_mail).filter(email => !!email).map(censor);
+    const filteredEmails = contacts.filter(contact => contact.ativo).map(emailObject => emailObject.e_mail).filter(email => !!email).map(censor);
     return filteredEmails;
   }
 
   emailsRaw(contacts) {
-    return contacts.map(emailObject => emailObject.e_mail).filter(email => !!email);
+    return contacts.filter(contact => contact.ativo).map(emailObject => emailObject.e_mail).filter(email => !!email);
   }
 
   async run({
@@ -47,7 +47,6 @@ class RetrieveEmailsV2 {
     const contacts = await _ListContactData.default.run({
       codcli
     });
-    console.log(contacts);
     if (censored) return this.emailsCensored(contacts);
     return this.emailsRaw(contacts);
   }

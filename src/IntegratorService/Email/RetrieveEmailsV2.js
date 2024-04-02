@@ -13,6 +13,7 @@ class RetrieveEmailsV2 {
       )}@${domain}`;
     }
     const filteredEmails = contacts
+      .filter((contact) => contact.ativo)
       .map((emailObject) => emailObject.e_mail)
       .filter((email) => !!email)
       .map(censor);
@@ -22,6 +23,7 @@ class RetrieveEmailsV2 {
 
   emailsRaw(contacts) {
     return contacts
+      .filter((contact) => contact.ativo)
       .map((emailObject) => emailObject.e_mail)
       .filter((email) => !!email);
   }
@@ -39,7 +41,6 @@ class RetrieveEmailsV2 {
       document: documentNum,
     });
     const contacts = await ListContactData.run({ codcli });
-    console.log(contacts);
     if (censored) return this.emailsCensored(contacts);
     return this.emailsRaw(contacts);
   }
