@@ -25,7 +25,8 @@ class ListContactData {
       return contactsList.data.results.map(contact => ({
         e_mail: contact.e_mail,
         celular: contact.celular,
-        codco_cl_p: contact.codco_cl_p
+        codco_cl_p: contact.codco_cl_p,
+        ativo: contact.ativo === 'S'
       }));
     }
 

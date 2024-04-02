@@ -11,6 +11,7 @@ class ListContactData {
         e_mail: contact.e_mail,
         celular: contact.celular,
         codco_cl_p: contact.codco_cl_p,
+        ativo: contact.ativo === 'S',
       }));
     }
     throw new ServiceError(500, 'Erro desconhecido');
