@@ -37,6 +37,8 @@ var _Cidades = _interopRequireDefault(require("./resources/Cidades"));
 
 var _Plan = _interopRequireDefault(require("./resources/Plan"));
 
+var _Radius = _interopRequireDefault(require("./resources/Radius"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -55,6 +57,7 @@ var _default = {
   AuthorizationLogin: _AuthorizationLogin.default,
   ConnectionExtract: _ConnectionExtract.default,
   Service: _Service.default,
-  Plan: _Plan.default
+  Plan: _Plan.default,
+  Radius: _Radius.default
 };
 exports.default = _default;
