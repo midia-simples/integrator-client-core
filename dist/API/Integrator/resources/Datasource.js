@@ -14,7 +14,7 @@ class Datasource extends _Resource.default {
     return this.request('datasource.criarAtendimento', data);
   }
 
-  getlogin(data) {
+  getLogin(data) {
     return this.request('datasource.radius.getLogin', data);
   }
 

@@ -5,7 +5,7 @@ class Datasource extends Resource {
     return this.request('datasource.criarAtendimento', data);
   }
 
-  getlogin(data) {
+  getLogin(data) {
     return this.request('datasource.radius.getLogin', data);
   }
 
