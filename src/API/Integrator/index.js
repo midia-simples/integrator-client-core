@@ -14,6 +14,7 @@ import ConnectionExtract from './resources/ConnectionExtract';
 import Service from './resources/Service';
 import Cidades from './resources/Cidades';
 import Plan from './resources/Plan';
+import Radius from './resources/Radius';
 
 export default {
   Bill,
@@ -32,4 +33,5 @@ export default {
   ConnectionExtract,
   Service,
   Plan,
+  Radius,
 };
