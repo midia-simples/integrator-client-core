@@ -10,7 +10,7 @@ class Datasource extends Resource {
   }
 
   getUserConfig(data) {
-    return this.request('datasource.radius.getUserConfig', data);
+    return this.request('radius.getUserConfig', data);
   }
 
   ocorrenciaStatus(data) {
