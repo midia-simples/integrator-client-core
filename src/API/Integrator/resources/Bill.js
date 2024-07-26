@@ -12,6 +12,10 @@ class Bill extends Resource {
   generatePix({ codfat }) {
     return this.request('fatura.getPix', { codfat });
   }
+
+  extract(data) {
+    return this.request('extrato.financeiro', data);
+  }
 }
 
 export default new Bill();

@@ -26,6 +26,10 @@ class Bill extends _Resource.default {
     });
   }
 
+  extract(data) {
+    return this.request('extrato.financeiro', data);
+  }
+
 }
 
 var _default = new Bill();
