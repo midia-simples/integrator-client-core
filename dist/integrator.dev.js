@@ -12,6 +12,12 @@ var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/Li
 
 var _RetrieveEmailsV = _interopRequireDefault(require("./IntegratorService/Email/RetrieveEmailsV2"));
 
+var _ShowAllPlans = _interopRequireDefault(require("./IntegratorService/Plan/ShowAllPlans"));
+
+var _FilterPlans = _interopRequireDefault(require("./IntegratorService/Plan/FilterPlans"));
+
+var _GetFaturas = _interopRequireDefault(require("./IntegratorService/Boleto/GetFaturas"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _dotenv.default.config();
@@ -24,7 +30,19 @@ async function dev() {
     pass: process.env.API_INTEGRATOR_PASS,
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE
-  }); // const dataList = await ListActiveServices.run({
+  });
+
+  const data = await _GetFaturas.default.run({
+    codcli: '27158',
+    // codfat: '02V10WT5D4',
+    codsercli: 'FJUFHLFB1B'
+  });
+  console.log(data); // const filterPlans = await FilterPlans.run({
+  //   codcli: '27158',
+  //   status: 'Serviço Habilitado',
+  // });
+  // console.log(filterPlans, 'filterPlans');
+  // const dataList = await ListActiveServices.run({
   //   codcli: '50553',
   //   statusQuery: { getEqual: false, text: 'Cancelado' },
   // });
@@ -44,17 +62,15 @@ async function dev() {
   //   celular: '',
   // });
   // console.log('EditContactData', resp);
-  // const data = await ListBoletos.run({
-  //  codcli: '61194',
-  // });
   // const data = await ListContactData.categoryPhone();
+  // const data = await ListBoletos.run({
+  //   codcli: '27158',
+  // });
   // console.log('ListBoletos', data);
-
-
-  const emails = await _RetrieveEmailsV.default.run({
-    document: ''
-  });
-  console.log(emails);
+  // const emails = await RetrieveEmailsV2.run({
+  //   document: '',
+  // });
+  // console.log(emails);
 }
 
 dev();

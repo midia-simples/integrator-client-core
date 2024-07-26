@@ -21,9 +21,9 @@ class FilterPlans {
 
   getResponsePlans(plans, status) {
     if (status) {
-      return plans?.filter(
-        (plano) => plano.Status_150.trim() === status,
-      )?.map(this.formatPlan);
+      return plans
+        ?.filter((plano) => plano.Status_150.trim() === status)
+        ?.map(this.formatPlan);
     }
     return plans.map(this.formatPlan);
   }

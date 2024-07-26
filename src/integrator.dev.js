@@ -4,6 +4,9 @@ import ListContactData from './IntegratorService/Contact/ListContactData';
 import EditContactData from './IntegratorService/Contact/EditContactData';
 import ListBoletos from './IntegratorService/Boleto/ListBoletos';
 import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
+import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
+import FilterPlans from './IntegratorService/Plan/FilterPlans';
+import GetFaturas from './IntegratorService/Boleto/GetFaturas';
 
 dotenv.config();
 
@@ -16,6 +19,19 @@ async function dev() {
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
+
+  const data = await GetFaturas.run({
+    codcli: '27158',
+    // codfat: '02V10WT5D4',
+    codsercli: 'FJUFHLFB1B',
+  });
+  console.log(data);
+
+  // const filterPlans = await FilterPlans.run({
+  //   codcli: '27158',
+  //   status: 'Serviço Habilitado',
+  // });
+  // console.log(filterPlans, 'filterPlans');
 
   // const dataList = await ListActiveServices.run({
   //   codcli: '50553',
@@ -43,18 +59,17 @@ async function dev() {
 
   // console.log('EditContactData', resp);
 
-  // const data = await ListBoletos.run({
-  //  codcli: '61194',
-  // });
-
   // const data = await ListContactData.categoryPhone();
 
+  // const data = await ListBoletos.run({
+  //   codcli: '27158',
+  // });
   // console.log('ListBoletos', data);
 
-  const emails = await RetrieveEmailsV2.run({
-    document: '',
-  });
-  console.log(emails);
+  // const emails = await RetrieveEmailsV2.run({
+  //   document: '',
+  // });
+  // console.log(emails);
 }
 
 dev();
