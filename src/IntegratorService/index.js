@@ -21,6 +21,7 @@ import ListBoletos from './Boleto/ListBoletos';
 import GeneratePix from './Boleto/GeneratePix';
 import GetBoletoData from './Boleto/GetBoletoData';
 import GetBoletoPDF from './Boleto/GetBoletoPDF';
+import GetFaturas from './Boleto/GetFaturas';
 
 import ListNotaFiscal from './NotaFiscal/ListNotaFiscal';
 import ImprimirNotaFiscal from './NotaFiscal/ImprimirNotaFiscal';
@@ -53,6 +54,7 @@ export default {
   ListContactData,
   SaveContactData,
   ListBoletos,
+  GetFaturas,
   GeneratePix,
   GetBoletoData,
   GetBoletoPDF,
