@@ -35,8 +35,6 @@ var _RetrieveEmails = _interopRequireDefault(require("./Email/RetrieveEmails"));
 
 var _RetrieveEmailsV = _interopRequireDefault(require("./Email/RetrieveEmailsV2"));
 
-var _GetFaturas = _interopRequireDefault(require("./Boleto/GetFaturas"));
-
 var _ListBoletos = _interopRequireDefault(require("./Boleto/ListBoletos"));
 
 var _GeneratePix = _interopRequireDefault(require("./Boleto/GeneratePix"));
@@ -44,6 +42,8 @@ var _GeneratePix = _interopRequireDefault(require("./Boleto/GeneratePix"));
 var _GetBoletoData = _interopRequireDefault(require("./Boleto/GetBoletoData"));
 
 var _GetBoletoPDF = _interopRequireDefault(require("./Boleto/GetBoletoPDF"));
+
+var _GetFaturas = _interopRequireDefault(require("./Boleto/GetFaturas"));
 
 var _ListNotaFiscal = _interopRequireDefault(require("./NotaFiscal/ListNotaFiscal"));
 

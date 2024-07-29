@@ -17,11 +17,11 @@ import EditContactData from './Contact/EditContactData';
 import RetrieveEmails from './Email/RetrieveEmails';
 import RetrieveEmailsV2 from './Email/RetrieveEmailsV2';
 
-import GetFaturas from './Boleto/GetFaturas';
 import ListBoletos from './Boleto/ListBoletos';
 import GeneratePix from './Boleto/GeneratePix';
 import GetBoletoData from './Boleto/GetBoletoData';
 import GetBoletoPDF from './Boleto/GetBoletoPDF';
+import GetFaturas from './Boleto/GetFaturas';
 
 import ListNotaFiscal from './NotaFiscal/ListNotaFiscal';
 import ImprimirNotaFiscal from './NotaFiscal/ImprimirNotaFiscal';
