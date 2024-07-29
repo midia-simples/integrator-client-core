@@ -43,6 +43,8 @@ var _GetBoletoData = _interopRequireDefault(require("./Boleto/GetBoletoData"));
 
 var _GetBoletoPDF = _interopRequireDefault(require("./Boleto/GetBoletoPDF"));
 
+var _GetFaturas = _interopRequireDefault(require("./Boleto/GetFaturas"));
+
 var _ListNotaFiscal = _interopRequireDefault(require("./NotaFiscal/ListNotaFiscal"));
 
 var _ImprimirNotaFiscal = _interopRequireDefault(require("./NotaFiscal/ImprimirNotaFiscal"));
@@ -82,6 +84,7 @@ var _default = {
   ListContactData: _ListContactData.default,
   SaveContactData: _SaveContactData.default,
   ListBoletos: _ListBoletos.default,
+  GetFaturas: _GetFaturas.default,
   GeneratePix: _GeneratePix.default,
   GetBoletoData: _GetBoletoData.default,
   GetBoletoPDF: _GetBoletoPDF.default,
