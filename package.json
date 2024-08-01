@@ -6,7 +6,7 @@
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='node_modules'",
     "clean": "yarn rimraf dist",
-    "build": "yarn clean && babel --presets='@babel/preset-env' src --out-dir dist",
+    "build": "yarn clean && yarn babel --presets='@babel/preset-env' src --out-dir dist",
     "lint": "yarn eslint src --ext .js",
     "lint:fix": "yarn lint --fix",
     "dev": "yarn cross-env babel-node src/integrator.dev.js",

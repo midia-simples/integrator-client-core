@@ -21,9 +21,9 @@ async function dev() {
   });
 
   const data = await GetFaturas.run({
-    codcli: '27158',
+    codcli: '20691',
     // codfat: '02V10WT5D4',
-    codsercli: 'FJUFHLFB1B',
+    codsercli: 'BZXEOQA40D',
   });
   console.log(data);
 
