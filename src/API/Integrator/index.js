@@ -16,6 +16,7 @@ import Cidades from './resources/Cidades';
 import Plan from './resources/Plan';
 import Radius from './resources/Radius';
 import PhonePlan from './resources/PhonePlan';
+import PhoneExpiration from './resources/PhoneExpiration';
 
 export default {
   Bill,
@@ -36,4 +37,5 @@ export default {
   Plan,
   Radius,
   PhonePlan,
+  PhoneExpiration,
 };

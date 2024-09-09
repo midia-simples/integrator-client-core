@@ -8,6 +8,7 @@ import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
 import FilterPlans from './IntegratorService/Plan/FilterPlans';
 import GetFaturas from './IntegratorService/Boleto/GetFaturas';
 import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
+import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
 
 dotenv.config();
 
@@ -21,10 +22,15 @@ async function dev() {
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
 
-  const phonePlans = await GetPhonePlans.run({
-    codcli: '50553',
+  // const phonePlans = await GetPhonePlans.run({
+  //   codcli: '50553',
+  // });
+  // console.log(phonePlans, 'phonePlans');
+
+  const phoneExpiration = await GetPhoneExpiration.run({
+    codsercli: 'BTYBCJ457S',
   });
-  console.log(phonePlans, 'phonePlans');
+  console.log(phoneExpiration, 'phoneExpiration');
 
   // const data = await GetFaturas.run({
   //   codcli: '27158',

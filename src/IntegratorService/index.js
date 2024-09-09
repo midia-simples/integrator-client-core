@@ -40,6 +40,8 @@ import AddAnexoOnTicket from './Ticket/AddAnexoOnTicket';
 import FilterPlans from './Plan/FilterPlans';
 import ShowAllPlans from './Plan/ShowAllPlans';
 import ListPlans from './Plan/ListPlans';
+import GetPhonePlans from './SAP/GetPhonePlans';
+import GetPhoneExpiration from './SAP/GetPhoneExpiration';
 
 export default {
   GetCustomerEmail,
@@ -74,4 +76,6 @@ export default {
   AddAnexoOnTicket,
   ListPlans,
   VerCadastro,
+  GetPhonePlans,
+  GetPhoneExpiration,
 };

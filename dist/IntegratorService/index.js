@@ -69,6 +69,10 @@ var _ShowAllPlans = _interopRequireDefault(require("./Plan/ShowAllPlans"));
 
 var _ListPlans = _interopRequireDefault(require("./Plan/ListPlans"));
 
+var _GetPhonePlans = _interopRequireDefault(require("./SAP/GetPhonePlans"));
+
+var _GetPhoneExpiration = _interopRequireDefault(require("./SAP/GetPhoneExpiration"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -103,6 +107,8 @@ var _default = {
   AttendenceListTypes: _AttendenceListTypes.default,
   AddAnexoOnTicket: _AddAnexoOnTicket.default,
   ListPlans: _ListPlans.default,
-  VerCadastro: _VerCadastro.default
+  VerCadastro: _VerCadastro.default,
+  GetPhonePlans: _GetPhonePlans.default,
+  GetPhoneExpiration: _GetPhoneExpiration.default
 };
 exports.default = _default;

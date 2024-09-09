@@ -41,6 +41,8 @@ var _Radius = _interopRequireDefault(require("./resources/Radius"));
 
 var _PhonePlan = _interopRequireDefault(require("./resources/PhonePlan"));
 
+var _PhoneExpiration = _interopRequireDefault(require("./resources/PhoneExpiration"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -61,6 +63,7 @@ var _default = {
   Service: _Service.default,
   Plan: _Plan.default,
   Radius: _Radius.default,
-  PhonePlan: _PhonePlan.default
+  PhonePlan: _PhonePlan.default,
+  PhoneExpiration: _PhoneExpiration.default
 };
 exports.default = _default;

@@ -20,6 +20,8 @@ var _GetFaturas = _interopRequireDefault(require("./IntegratorService/Boleto/Get
 
 var _GetPhonePlans = _interopRequireDefault(require("./IntegratorService/SAP/GetPhonePlans"));
 
+var _GetPhoneExpiration = _interopRequireDefault(require("./IntegratorService/SAP/GetPhoneExpiration"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _dotenv.default.config();
@@ -32,12 +34,16 @@ async function dev() {
     pass: process.env.API_INTEGRATOR_PASS,
     viewLogin: process.env.API_INTEGRATOR_VIEW_LOGIN_CENTRAL_ASSINANTE,
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE
-  });
+  }); // const phonePlans = await GetPhonePlans.run({
+  //   codcli: '50553',
+  // });
+  // console.log(phonePlans, 'phonePlans');
 
-  const phonePlans = await _GetPhonePlans.default.run({
-    codcli: '50553'
+
+  const phoneExpiration = await _GetPhoneExpiration.default.run({
+    codsercli: 'BTYBCJ457S'
   });
-  console.log(phonePlans, 'phonePlans'); // const data = await GetFaturas.run({
+  console.log(phoneExpiration, 'phoneExpiration'); // const data = await GetFaturas.run({
   //   codcli: '27158',
   //   // codfat: '02V10WT5D4',
   //   codsercli: 'FJUFHLFB1B',
