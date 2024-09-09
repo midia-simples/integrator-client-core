@@ -18,6 +18,8 @@ var _FilterPlans = _interopRequireDefault(require("./IntegratorService/Plan/Filt
 
 var _GetFaturas = _interopRequireDefault(require("./IntegratorService/Boleto/GetFaturas"));
 
+var _GetPhonePlans = _interopRequireDefault(require("./IntegratorService/SAP/GetPhonePlans"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _dotenv.default.config();
@@ -32,14 +34,18 @@ async function dev() {
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE
   });
 
-  const data = await _GetFaturas.default.run({
-    codcli: '27158',
-    // codfat: '02V10WT5D4',
-    codsercli: 'FJUFHLFB1B'
+  const phonePlans = await _GetPhonePlans.default.run({
+    codcli: '50553'
   });
-  console.log(data); // const filterPlans = await FilterPlans.run({
+  console.log(phonePlans, 'phonePlans'); // const data = await GetFaturas.run({
   //   codcli: '27158',
-  //   status: 'Serviço Habilitado',
+  //   // codfat: '02V10WT5D4',
+  //   codsercli: 'FJUFHLFB1B',
+  // });
+  // console.log(data);
+  // const filterPlans = await FilterPlans.run({
+  //   codcli: '27158',
+  //   // status: 'Serviço Habilitado',
   // });
   // console.log(filterPlans, 'filterPlans');
   // const dataList = await ListActiveServices.run({
