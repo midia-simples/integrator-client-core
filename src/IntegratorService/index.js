@@ -17,6 +17,7 @@ import EditContactData from './Contact/EditContactData';
 import RetrieveEmails from './Email/RetrieveEmails';
 import RetrieveEmailsV2 from './Email/RetrieveEmailsV2';
 
+import GetFaturas from './Boleto/GetFaturas';
 import ListBoletos from './Boleto/ListBoletos';
 import GeneratePix from './Boleto/GeneratePix';
 import GetBoletoData from './Boleto/GetBoletoData';
@@ -40,6 +41,9 @@ import AddAnexoOnTicket from './Ticket/AddAnexoOnTicket';
 import FilterPlans from './Plan/FilterPlans';
 import ShowAllPlans from './Plan/ShowAllPlans';
 import ListPlans from './Plan/ListPlans';
+import GetPhonePlans from './SAP/GetPhonePlans';
+import GetPhoneExpiration from './SAP/GetPhoneExpiration';
+import GetPhoneExtract from './SAP/GetPhoneExtract';
 
 export default {
   GetCustomerEmail,
@@ -74,4 +78,7 @@ export default {
   AddAnexoOnTicket,
   ListPlans,
   VerCadastro,
+  GetPhonePlans,
+  GetPhoneExpiration,
+  GetPhoneExtract,
 };
