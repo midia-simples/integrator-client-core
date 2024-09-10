@@ -22,6 +22,7 @@ class FilterPlans {
       _consulta: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
       codcli
     });
+    console.log(data, 'XXXX');
     return this.getResponsePlans((_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.results, status);
   }
 

@@ -7,6 +7,9 @@ import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
 import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
 import FilterPlans from './IntegratorService/Plan/FilterPlans';
 import GetFaturas from './IntegratorService/Boleto/GetFaturas';
+import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
+import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
+import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
 
 dotenv.config();
 
@@ -20,16 +23,35 @@ async function dev() {
     viewStatus: process.env.API_INTEGRATOR_VIEW_CIENTE_STATUS_ATIVIDADE,
   });
 
-  const data = await GetFaturas.run({
-    codcli: '20691',
-    // codfat: '02V10WT5D4',
-    codsercli: 'BZXEOQA40D',
+  // const phonePlans = await GetPhonePlans.run({
+  //   codcli: '50553',
+  // });
+  // console.log(phonePlans, 'phonePlans');
+
+  // const phoneExpiration = await GetPhoneExpiration.run({
+  //   codsercli: 'BTYBCJ457S',
+  // });
+  // console.log(phoneExpiration, 'phoneExpiration');
+
+  const phoneExtract = await GetPhoneExtract.run({
+    codsercli: 'BTYBCJ457S',
+    data_ini: '01/01/2024',
+    data_fim: '31/08/2024',
+    data_venc: '31/08/2024',
+    codflv: 'HBTK0T9WMK',
   });
-  console.log(data);
+  console.log(phoneExtract, 'phoneExtract');
+
+  // const data = await GetFaturas.run({
+  //   codcli: '27158',
+  //   // codfat: '02V10WT5D4',
+  //   codsercli: 'FJUFHLFB1B',
+  // });
+  // console.log(data);
 
   // const filterPlans = await FilterPlans.run({
   //   codcli: '27158',
-  //   status: 'Serviço Habilitado',
+  //   // status: 'Serviço Habilitado',
   // });
   // console.log(filterPlans, 'filterPlans');
 

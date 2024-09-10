@@ -7,6 +7,8 @@ class FilterPlans {
       codcli,
     });
 
+    console.log(data, 'XXXX');
+
     return this.getResponsePlans(data.data?.results, status);
   }
 
