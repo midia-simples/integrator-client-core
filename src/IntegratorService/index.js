@@ -42,6 +42,7 @@ import ShowAllPlans from './Plan/ShowAllPlans';
 import ListPlans from './Plan/ListPlans';
 import GetPhonePlans from './SAP/GetPhonePlans';
 import GetPhoneExpiration from './SAP/GetPhoneExpiration';
+import GetPhoneExtract from './SAP/GetPhoneExtract';
 
 export default {
   GetCustomerEmail,
@@ -78,4 +79,5 @@ export default {
   VerCadastro,
   GetPhonePlans,
   GetPhoneExpiration,
+  GetPhoneExtract,
 };

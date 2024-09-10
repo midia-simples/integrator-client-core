@@ -22,6 +22,8 @@ var _GetPhonePlans = _interopRequireDefault(require("./IntegratorService/SAP/Get
 
 var _GetPhoneExpiration = _interopRequireDefault(require("./IntegratorService/SAP/GetPhoneExpiration"));
 
+var _GetPhoneExtract = _interopRequireDefault(require("./IntegratorService/SAP/GetPhoneExtract"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _dotenv.default.config();
@@ -38,12 +40,20 @@ async function dev() {
   //   codcli: '50553',
   // });
   // console.log(phonePlans, 'phonePlans');
+  // const phoneExpiration = await GetPhoneExpiration.run({
+  //   codsercli: 'BTYBCJ457S',
+  // });
+  // console.log(phoneExpiration, 'phoneExpiration');
 
 
-  const phoneExpiration = await _GetPhoneExpiration.default.run({
-    codsercli: 'BTYBCJ457S'
+  const phoneExtract = await _GetPhoneExtract.default.run({
+    codsercli: 'BTYBCJ457S',
+    data_ini: '01/01/2024',
+    data_fim: '31/08/2024',
+    data_venc: '31/08/2024',
+    codflv: 'HBTK0T9WMK'
   });
-  console.log(phoneExpiration, 'phoneExpiration'); // const data = await GetFaturas.run({
+  console.log(phoneExtract, 'phoneExtract'); // const data = await GetFaturas.run({
   //   codcli: '27158',
   //   // codfat: '02V10WT5D4',
   //   codsercli: 'FJUFHLFB1B',
