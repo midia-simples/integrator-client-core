@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
+var _config = _interopRequireDefault(require("../../config"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class GetPhoneExtract {
@@ -29,9 +31,14 @@ class GetPhoneExtract {
 
     if (data.data) {
       const extracts = data.data.results;
+
+      const {
+        host
+      } = _config.default.getConfig();
+
       return extracts.map(extract => {
         return {
-          link_extract: extract.linkBoleto,
+          link_extract: `${host}/${extract.linkBoleto}`,
           codsercli,
           codflv
         };
