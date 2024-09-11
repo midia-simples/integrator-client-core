@@ -1,4 +1,5 @@
 import Integrator from '~/API/Integrator';
+import config from '~/config';
 
 class GetPhoneExtract {
   async run({ codsercli, data_ini, data_fim, data_venc, codflv }) {
@@ -12,9 +13,11 @@ class GetPhoneExtract {
     if (data.data) {
       const extracts = data.data.results;
 
+      const { host } = config.getConfig();
+
       return extracts.map((extract) => {
         return {
-          link_extract: extract.linkBoleto,
+          link_extract: `${host}/${extract.linkBoleto}`,
           codsercli,
           codflv,
         };

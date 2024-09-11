@@ -10,6 +10,7 @@ import GetFaturas from './IntegratorService/Boleto/GetFaturas';
 import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
 import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
 import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
+import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 
 dotenv.config();
 
@@ -43,9 +44,14 @@ async function dev() {
   console.log(phoneExtract, 'phoneExtract');
 
   // const data = await GetFaturas.run({
-  //   codcli: '27158',
+  //   codcli: '50553',
   //   // codfat: '02V10WT5D4',
-  //   codsercli: 'FJUFHLFB1B',
+  //   codsercli: 'FN3D0T4XDU',
+  // });
+  // console.log(data);
+
+  // const data = await GetBoletoData.run({
+  //   codfat: 'HBTL0XPKF6',
   // });
   // console.log(data);
 
