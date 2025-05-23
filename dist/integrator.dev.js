@@ -4,6 +4,8 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _index = require("./index");
 
+var _ListOs = _interopRequireDefault(require("./IntegratorService/Os/ListOs"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import ListContactData from './IntegratorService/Contact/ListContactData';
@@ -18,7 +20,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
 // import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 // import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
-// import ListOs from './IntegratorService/Os/ListOs';
 _dotenv.default.config();
 
 async function dev() {
@@ -93,12 +94,15 @@ async function dev() {
   //   document: '051.603.411-10',
   // });
   // console.log('User', data.data.data);
-  // const data = await ListOs.run({
-  //   codview: '01A20TL08D',
-  //   codcli: '50553',
-  // });
-  // console.log('ListOs', data);
 
+
+  const data = await _ListOs.default.run({
+    codview: '01A20TL08D',
+    codcli: '50553',
+    from: '2015-03-02',
+    to: '2018-03-02'
+  });
+  console.log('ListOs', data);
 }
 
 dev();

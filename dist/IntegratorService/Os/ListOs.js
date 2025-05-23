@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _dateFns = require("date-fns");
+
 var _Integrator = _interopRequireDefault(require("../../API/Integrator"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -12,13 +14,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class ListOs {
   async run({
     codcli,
-    codview
+    codview,
+    from,
+    to
   }) {
+    const toSelected = to || (0, _dateFns.format)((0, _dateFns.addYears)(new Date(), 2), 'yyyy-MM-dd');
+    const fromSelected = from || (0, _dateFns.format)((0, _dateFns.subYears)(new Date(), 2), 'yyyy-MM-dd');
     const {
       data
     } = await _Integrator.default.View.execute({
       _consulta: codview,
-      cliente: codcli
+      cliente: codcli,
+      data: `'${fromSelected}','${toSelected}'`
     });
 
     if (data.data) {
