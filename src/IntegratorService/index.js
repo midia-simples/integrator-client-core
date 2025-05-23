@@ -43,6 +43,7 @@ import ListPlans from './Plan/ListPlans';
 import GetPhonePlans from './SAP/GetPhonePlans';
 import GetPhoneExpiration from './SAP/GetPhoneExpiration';
 import GetPhoneExtract from './SAP/GetPhoneExtract';
+import ListOs from './Os/ListOs';
 
 export default {
   GetCustomerEmail,
@@ -80,4 +81,5 @@ export default {
   GetPhonePlans,
   GetPhoneExpiration,
   GetPhoneExtract,
+  ListOs,
 };

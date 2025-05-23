@@ -75,6 +75,8 @@ var _GetPhoneExpiration = _interopRequireDefault(require("./SAP/GetPhoneExpirati
 
 var _GetPhoneExtract = _interopRequireDefault(require("./SAP/GetPhoneExtract"));
 
+var _ListOs = _interopRequireDefault(require("./Os/ListOs"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -112,6 +114,7 @@ var _default = {
   VerCadastro: _VerCadastro.default,
   GetPhonePlans: _GetPhonePlans.default,
   GetPhoneExpiration: _GetPhoneExpiration.default,
-  GetPhoneExtract: _GetPhoneExtract.default
+  GetPhoneExtract: _GetPhoneExtract.default,
+  ListOs: _ListOs.default
 };
 exports.default = _default;
