@@ -1,10 +1,15 @@
+import { addYears, format, subYears } from 'date-fns';
 import Integrator from '~/API/Integrator';
 
 class ListOs {
-  async run({ codcli, codview }) {
+  async run({ codcli, codview, from, to }) {
+    const toSelected = to || format(addYears(new Date(), 2), 'yyyy-MM-dd');
+    const fromSelected = from || format(subYears(new Date(), 2), 'yyyy-MM-dd');
+
     const { data } = await Integrator.View.execute({
       _consulta: codview,
       cliente: codcli,
+      data: `'${fromSelected}','${toSelected}'`,
     });
 
     if (data.data) {
