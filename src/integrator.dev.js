@@ -1,16 +1,18 @@
 import dotenv from 'dotenv';
 import { config } from './index';
-import ListContactData from './IntegratorService/Contact/ListContactData';
-import EditContactData from './IntegratorService/Contact/EditContactData';
-import ListBoletos from './IntegratorService/Boleto/ListBoletos';
-import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
-import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
-import FilterPlans from './IntegratorService/Plan/FilterPlans';
-import GetFaturas from './IntegratorService/Boleto/GetFaturas';
-import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
-import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
-import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
-import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
+// import ListContactData from './IntegratorService/Contact/ListContactData';
+// import EditContactData from './IntegratorService/Contact/EditContactData';
+// import ListBoletos from './IntegratorService/Boleto/ListBoletos';
+// import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
+// import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
+// import FilterPlans from './IntegratorService/Plan/FilterPlans';
+// import GetFaturas from './IntegratorService/Boleto/GetFaturas';
+// import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
+// import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
+// import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
+// import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
+// import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
+// import ListOs from './IntegratorService/Os/ListOs';
 
 dotenv.config();
 
@@ -34,14 +36,14 @@ async function dev() {
   // });
   // console.log(phoneExpiration, 'phoneExpiration');
 
-  const phoneExtract = await GetPhoneExtract.run({
-    codsercli: 'BTYBCJ457S',
-    data_ini: '01/01/2024',
-    data_fim: '31/08/2024',
-    data_venc: '31/08/2024',
-    codflv: 'HBTK0T9WMK',
-  });
-  console.log(phoneExtract, 'phoneExtract');
+  // const phoneExtract = await GetPhoneExtract.run({
+  //   codsercli: 'BTYBCJ457S',
+  //   data_ini: '01/01/2024',
+  //   data_fim: '31/08/2024',
+  //   data_venc: '31/08/2024',
+  //   codflv: 'HBTK0T9WMK',
+  // });
+  // console.log(phoneExtract, 'phoneExtract');
 
   // const data = await GetFaturas.run({
   //   codcli: '50553',
@@ -90,7 +92,7 @@ async function dev() {
   // const data = await ListContactData.categoryPhone();
 
   // const data = await ListBoletos.run({
-  //   codcli: '27158',
+  //   codcli: '50553',
   // });
   // console.log('ListBoletos', data);
 
@@ -98,6 +100,18 @@ async function dev() {
   //   document: '',
   // });
   // console.log(emails);
+
+  // const data = await ShowCustomer.run({
+  //   document: '051.603.411-10',
+  // });
+
+  // console.log('User', data.data.data);
+
+  // const data = await ListOs.run({
+  //   codview: '01A20TL08D',
+  //   codcli: '50553',
+  // });
+  // console.log('ListOs', data);
 }
 
 dev();

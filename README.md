@@ -41,3 +41,13 @@ EditCustomerName.run({
   nome_cli: 'STRING*',
 });
 ```
+
+#### Como atualizar?
+
+1 - Rodar o build e Mergear na master
+
+2 - Ir no projeto e rodar:
+
+```js
+yarn add https://github.com/midia-simples/integrator-client-core
+```

@@ -4,30 +4,21 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _index = require("./index");
 
-var _ListContactData = _interopRequireDefault(require("./IntegratorService/Contact/ListContactData"));
-
-var _EditContactData = _interopRequireDefault(require("./IntegratorService/Contact/EditContactData"));
-
-var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/ListBoletos"));
-
-var _RetrieveEmailsV = _interopRequireDefault(require("./IntegratorService/Email/RetrieveEmailsV2"));
-
-var _ShowAllPlans = _interopRequireDefault(require("./IntegratorService/Plan/ShowAllPlans"));
-
-var _FilterPlans = _interopRequireDefault(require("./IntegratorService/Plan/FilterPlans"));
-
-var _GetFaturas = _interopRequireDefault(require("./IntegratorService/Boleto/GetFaturas"));
-
-var _GetPhonePlans = _interopRequireDefault(require("./IntegratorService/SAP/GetPhonePlans"));
-
-var _GetPhoneExpiration = _interopRequireDefault(require("./IntegratorService/SAP/GetPhoneExpiration"));
-
-var _GetPhoneExtract = _interopRequireDefault(require("./IntegratorService/SAP/GetPhoneExtract"));
-
-var _GetBoletoData = _interopRequireDefault(require("./IntegratorService/Boleto/GetBoletoData"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import ListContactData from './IntegratorService/Contact/ListContactData';
+// import EditContactData from './IntegratorService/Contact/EditContactData';
+// import ListBoletos from './IntegratorService/Boleto/ListBoletos';
+// import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
+// import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
+// import FilterPlans from './IntegratorService/Plan/FilterPlans';
+// import GetFaturas from './IntegratorService/Boleto/GetFaturas';
+// import GetPhonePlans from './IntegratorService/SAP/GetPhonePlans';
+// import GetPhoneExpiration from './IntegratorService/SAP/GetPhoneExpiration';
+// import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
+// import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
+// import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
+// import ListOs from './IntegratorService/Os/ListOs';
 _dotenv.default.config();
 
 async function dev() {
@@ -46,16 +37,15 @@ async function dev() {
   //   codsercli: 'BTYBCJ457S',
   // });
   // console.log(phoneExpiration, 'phoneExpiration');
-
-
-  const phoneExtract = await _GetPhoneExtract.default.run({
-    codsercli: 'BTYBCJ457S',
-    data_ini: '01/01/2024',
-    data_fim: '31/08/2024',
-    data_venc: '31/08/2024',
-    codflv: 'HBTK0T9WMK'
-  });
-  console.log(phoneExtract, 'phoneExtract'); // const data = await GetFaturas.run({
+  // const phoneExtract = await GetPhoneExtract.run({
+  //   codsercli: 'BTYBCJ457S',
+  //   data_ini: '01/01/2024',
+  //   data_fim: '31/08/2024',
+  //   data_venc: '31/08/2024',
+  //   codflv: 'HBTK0T9WMK',
+  // });
+  // console.log(phoneExtract, 'phoneExtract');
+  // const data = await GetFaturas.run({
   //   codcli: '50553',
   //   // codfat: '02V10WT5D4',
   //   codsercli: 'FN3D0T4XDU',
@@ -92,13 +82,23 @@ async function dev() {
   // console.log('EditContactData', resp);
   // const data = await ListContactData.categoryPhone();
   // const data = await ListBoletos.run({
-  //   codcli: '27158',
+  //   codcli: '50553',
   // });
   // console.log('ListBoletos', data);
   // const emails = await RetrieveEmailsV2.run({
   //   document: '',
   // });
   // console.log(emails);
+  // const data = await ShowCustomer.run({
+  //   document: '051.603.411-10',
+  // });
+  // console.log('User', data.data.data);
+  // const data = await ListOs.run({
+  //   codview: '01A20TL08D',
+  //   codcli: '50553',
+  // });
+  // console.log('ListOs', data);
+
 }
 
 dev();
