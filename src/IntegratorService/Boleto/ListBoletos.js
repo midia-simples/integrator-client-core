@@ -47,6 +47,7 @@ class ListBoletos {
           multa: fatura.multa,
           pago: saldoFloat <= 0,
           pix: fatura.usa_pix === 'S',
+          referencia: fatura.referencia_plano,
         };
       });
     }
