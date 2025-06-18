@@ -4,7 +4,7 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _index = require("./index");
 
-var _ListOs = _interopRequireDefault(require("./IntegratorService/Os/ListOs"));
+var _ListActiveServices = _interopRequireDefault(require("./IntegratorService/Service/ListActiveServices"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20,6 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
 // import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 // import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
+// import ListOs from './IntegratorService/Os/ListOs';
 _dotenv.default.config();
 
 async function dev() {
@@ -61,12 +62,16 @@ async function dev() {
   //   // status: 'Serviço Habilitado',
   // });
   // console.log(filterPlans, 'filterPlans');
-  // const dataList = await ListActiveServices.run({
-  //   codcli: '50553',
-  //   statusQuery: { getEqual: false, text: 'Cancelado' },
-  // });
-  // console.log('ListActiveServices', dataList);
-  // const data = await ListPlans.run({
+
+
+  const dataList = await _ListActiveServices.default.run({
+    codcli: '50553',
+    statusQuery: {
+      getEqual: false,
+      text: 'Cancelado'
+    }
+  });
+  console.log('ListActiveServices', dataList); // const data = await ListPlans.run({
   //   ibge_cidade: '5100250',
   // });
   // const resp = await SaveContactData.run({
@@ -94,15 +99,13 @@ async function dev() {
   //   document: '051.603.411-10',
   // });
   // console.log('User', data.data.data);
-
-
-  const data = await _ListOs.default.run({
-    codview: '01A20TL08D',
-    codcli: '50553',
-    from: '2015-03-02',
-    to: '2018-03-02'
-  });
-  console.log('ListOs', data);
+  // const data = await ListOs.run({
+  //   codview: '01A20TL08D',
+  //   codcli: '50553',
+  //   from: '2015-03-02',
+  //   to: '2018-03-02',
+  // });
+  // console.log('ListOs', data);
 }
 
 dev();

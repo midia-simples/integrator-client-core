@@ -12,7 +12,8 @@ import { config } from './index';
 // import GetPhoneExtract from './IntegratorService/SAP/GetPhoneExtract';
 // import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 // import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
-import ListOs from './IntegratorService/Os/ListOs';
+// import ListOs from './IntegratorService/Os/ListOs';
+import ListActiveServices from './IntegratorService/Service/ListActiveServices';
 
 dotenv.config();
 
@@ -63,11 +64,11 @@ async function dev() {
   // });
   // console.log(filterPlans, 'filterPlans');
 
-  // const dataList = await ListActiveServices.run({
-  //   codcli: '50553',
-  //   statusQuery: { getEqual: false, text: 'Cancelado' },
-  // });
-  // console.log('ListActiveServices', dataList);
+  const dataList = await ListActiveServices.run({
+    codcli: '50553',
+    statusQuery: { getEqual: false, text: 'Cancelado' },
+  });
+  console.log('ListActiveServices', dataList);
 
   // const data = await ListPlans.run({
   //   ibge_cidade: '5100250',
@@ -107,13 +108,13 @@ async function dev() {
 
   // console.log('User', data.data.data);
 
-  const data = await ListOs.run({
-    codview: '01A20TL08D',
-    codcli: '50553',
-    from: '2015-03-02',
-    to: '2018-03-02',
-  });
-  console.log('ListOs', data);
+  // const data = await ListOs.run({
+  //   codview: '01A20TL08D',
+  //   codcli: '50553',
+  //   from: '2015-03-02',
+  //   to: '2018-03-02',
+  // });
+  // console.log('ListOs', data);
 }
 
 dev();
