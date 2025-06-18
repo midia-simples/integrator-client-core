@@ -34,7 +34,8 @@ class ShowAllPlans {
       nome_plano: item.Nome_do_Plano_200,
       codigo_plano: item.Codigo_plano,
       status_plano: item.Status_150.trim(),
-      endereco_plano: item.endereco_instalacao_200.trim()
+      endereco_plano: item.endereco_instalacao_200.trim(),
+      referencia: item.Referencia_250
     }));
   }
 

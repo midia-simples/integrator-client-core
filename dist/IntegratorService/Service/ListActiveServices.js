@@ -50,6 +50,7 @@ class ListActiveServices {
           dia_vencimento: service.dia,
           codsercli: service.codsercli,
           status: service.descri_est,
+          referencia: service.Referencia_250,
           ...details,
           ...speedPlan
         };

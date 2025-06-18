@@ -32,7 +32,8 @@ class ListPlans {
           valor: Number(plan.valor),
           name: descArr[0].trim(),
           download: Number(descReplace[1].replace('MB', '')),
-          descricao: plan.descri_ser_enc
+          descricao: plan.descri_ser_enc,
+          referencia: plan.Referencia_250
         };
       });
     }
