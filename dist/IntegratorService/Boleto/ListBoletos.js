@@ -59,7 +59,8 @@ class ListBoletos {
           juros: fatura.juros,
           multa: fatura.multa,
           pago: saldoFloat <= 0,
-          pix: fatura.usa_pix === 'S'
+          pix: fatura.usa_pix === 'S',
+          referencia: fatura.referencia_plano
         };
       });
     }
