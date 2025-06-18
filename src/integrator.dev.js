@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import { config } from './index';
 // import ListContactData from './IntegratorService/Contact/ListContactData';
 // import EditContactData from './IntegratorService/Contact/EditContactData';
-// import ListBoletos from './IntegratorService/Boleto/ListBoletos';
+import ListBoletos from './IntegratorService/Boleto/ListBoletos';
 // import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
 // import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
 // import FilterPlans from './IntegratorService/Plan/FilterPlans';
@@ -13,7 +13,7 @@ import { config } from './index';
 // import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 // import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
 // import ListOs from './IntegratorService/Os/ListOs';
-import ListActiveServices from './IntegratorService/Service/ListActiveServices';
+// import ListActiveServices from './IntegratorService/Service/ListActiveServices';
 
 dotenv.config();
 
@@ -64,11 +64,11 @@ async function dev() {
   // });
   // console.log(filterPlans, 'filterPlans');
 
-  const dataList = await ListActiveServices.run({
-    codcli: '50553',
-    statusQuery: { getEqual: false, text: 'Cancelado' },
-  });
-  console.log('ListActiveServices', dataList);
+  // const dataList = await ListActiveServices.run({
+  //   codcli: '63922',
+  //   statusQuery: { getEqual: false, text: 'Cancelado' },
+  // });
+  // console.log('ListActiveServices', dataList);
 
   // const data = await ListPlans.run({
   //   ibge_cidade: '5100250',
@@ -92,10 +92,10 @@ async function dev() {
 
   // const data = await ListContactData.categoryPhone();
 
-  // const data = await ListBoletos.run({
-  //   codcli: '50553',
-  // });
-  // console.log('ListBoletos', data);
+  const data = await ListBoletos.run({
+    codcli: '63922',
+  });
+  console.log('ListBoletos', data);
 
   // const emails = await RetrieveEmailsV2.run({
   //   document: '',

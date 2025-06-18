@@ -4,13 +4,12 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _index = require("./index");
 
-var _ListActiveServices = _interopRequireDefault(require("./IntegratorService/Service/ListActiveServices"));
+var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/ListBoletos"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import ListContactData from './IntegratorService/Contact/ListContactData';
 // import EditContactData from './IntegratorService/Contact/EditContactData';
-// import ListBoletos from './IntegratorService/Boleto/ListBoletos';
 // import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
 // import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
 // import FilterPlans from './IntegratorService/Plan/FilterPlans';
@@ -21,6 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import GetBoletoData from './IntegratorService/Boleto/GetBoletoData';
 // import ShowCustomer from './IntegratorService/Customer/ShowCustomer';
 // import ListOs from './IntegratorService/Os/ListOs';
+// import ListActiveServices from './IntegratorService/Service/ListActiveServices';
 _dotenv.default.config();
 
 async function dev() {
@@ -62,16 +62,12 @@ async function dev() {
   //   // status: 'Serviço Habilitado',
   // });
   // console.log(filterPlans, 'filterPlans');
-
-
-  const dataList = await _ListActiveServices.default.run({
-    codcli: '50553',
-    statusQuery: {
-      getEqual: false,
-      text: 'Cancelado'
-    }
-  });
-  console.log('ListActiveServices', dataList); // const data = await ListPlans.run({
+  // const dataList = await ListActiveServices.run({
+  //   codcli: '63922',
+  //   statusQuery: { getEqual: false, text: 'Cancelado' },
+  // });
+  // console.log('ListActiveServices', dataList);
+  // const data = await ListPlans.run({
   //   ibge_cidade: '5100250',
   // });
   // const resp = await SaveContactData.run({
@@ -87,11 +83,12 @@ async function dev() {
   // });
   // console.log('EditContactData', resp);
   // const data = await ListContactData.categoryPhone();
-  // const data = await ListBoletos.run({
-  //   codcli: '50553',
-  // });
-  // console.log('ListBoletos', data);
-  // const emails = await RetrieveEmailsV2.run({
+
+
+  const data = await _ListBoletos.default.run({
+    codcli: '63922'
+  });
+  console.log('ListBoletos', data); // const emails = await RetrieveEmailsV2.run({
   //   document: '',
   // });
   // console.log(emails);
