@@ -45,6 +45,8 @@ var _PhoneExpiration = _interopRequireDefault(require("./resources/PhoneExpirati
 
 var _PhoneExtract = _interopRequireDefault(require("./resources/PhoneExtract"));
 
+var _Credits = _interopRequireDefault(require("./resources/Credits"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -67,6 +69,7 @@ var _default = {
   Radius: _Radius.default,
   PhonePlan: _PhonePlan.default,
   PhoneExpiration: _PhoneExpiration.default,
-  PhoneExtract: _PhoneExtract.default
+  PhoneExtract: _PhoneExtract.default,
+  Credits: _Credits.default
 };
 exports.default = _default;

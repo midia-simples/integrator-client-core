@@ -4,12 +4,14 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _index = require("./index");
 
-var _ListBoletos = _interopRequireDefault(require("./IntegratorService/Boleto/ListBoletos"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* eslint-disable no-console */
 // import ListContactData from './IntegratorService/Contact/ListContactData';
 // import EditContactData from './IntegratorService/Contact/EditContactData';
+// import ListBoletos from './IntegratorService/Boleto/ListBoletos';
+// import ListCredits from './IntegratorService/MVNO/ListCredits';
+// import AddCredits from './IntegratorService/MVNO/AddCredits';
 // import RetrieveEmailsV2 from './IntegratorService/Email/RetrieveEmailsV2';
 // import ShowAllPlans from './IntegratorService/Plan/ShowAllPlans';
 // import FilterPlans from './IntegratorService/Plan/FilterPlans';
@@ -83,12 +85,11 @@ async function dev() {
   // });
   // console.log('EditContactData', resp);
   // const data = await ListContactData.categoryPhone();
-
-
-  const data = await _ListBoletos.default.run({
-    codcli: '63922'
-  });
-  console.log('ListBoletos', data); // const emails = await RetrieveEmailsV2.run({
+  // const data = await ListBoletos.run({
+  //   codcli: '63922',
+  // });
+  // console.log('ListBoletos', data);
+  // const emails = await RetrieveEmailsV2.run({
   //   document: '',
   // });
   // console.log(emails);
@@ -103,6 +104,15 @@ async function dev() {
   //   to: '2018-03-02',
   // });
   // console.log('ListOs', data);
+  // const data = await ListCredits.run();
+  // console.log('ListCredits', data);
+  // codvcre = 01CH10O7C4
+  // const data = await AddCredits.run({
+  //   codvcre: '01CH10O7C4',
+  //   codsercli: '02ZMIPOKWP',
+  // });
+  // console.log('AddCredits', data);
+
 }
 
 dev();
