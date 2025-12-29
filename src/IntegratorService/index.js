@@ -44,6 +44,8 @@ import GetPhonePlans from './SAP/GetPhonePlans';
 import GetPhoneExpiration from './SAP/GetPhoneExpiration';
 import GetPhoneExtract from './SAP/GetPhoneExtract';
 import ListOs from './Os/ListOs';
+import ListCredits from './MVNO/ListCredits';
+import AddCredits from './MVNO/AddCredits';
 
 export default {
   GetCustomerEmail,
@@ -82,4 +84,6 @@ export default {
   GetPhoneExpiration,
   GetPhoneExtract,
   ListOs,
+  AddCredits,
+  ListCredits,
 };

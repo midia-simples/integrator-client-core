@@ -77,6 +77,10 @@ var _GetPhoneExtract = _interopRequireDefault(require("./SAP/GetPhoneExtract"));
 
 var _ListOs = _interopRequireDefault(require("./Os/ListOs"));
 
+var _ListCredits = _interopRequireDefault(require("./MVNO/ListCredits"));
+
+var _AddCredits = _interopRequireDefault(require("./MVNO/AddCredits"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -115,6 +119,8 @@ var _default = {
   GetPhonePlans: _GetPhonePlans.default,
   GetPhoneExpiration: _GetPhoneExpiration.default,
   GetPhoneExtract: _GetPhoneExtract.default,
-  ListOs: _ListOs.default
+  ListOs: _ListOs.default,
+  AddCredits: _AddCredits.default,
+  ListCredits: _ListCredits.default
 };
 exports.default = _default;
