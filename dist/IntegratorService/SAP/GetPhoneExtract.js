@@ -36,13 +36,11 @@ class GetPhoneExtract {
         host
       } = _config.default.getConfig();
 
-      return extracts.map(extract => {
-        return {
-          link_extract: `${host}/${extract.linkBoleto}`,
-          codsercli,
-          codflv
-        };
-      });
+      return extracts.map(extract => ({
+        link_extract: `${host}/${extract.linkBoleto}`,
+        codsercli,
+        codflv
+      }));
     }
 
     return [];

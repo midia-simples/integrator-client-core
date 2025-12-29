@@ -21,13 +21,11 @@ class GetPhonePlans {
 
     if (data.data) {
       const plans = data.data.results;
-      return plans.map(plan => {
-        return {
-          codsercli: plan.codsercli,
-          status: plan.descricao_status,
-          name: plan.descricao_plano
-        };
-      });
+      return plans.map(plan => ({
+        codsercli: plan.codsercli,
+        status: plan.descricao_status,
+        name: plan.descricao_plano
+      }));
     }
 
     return [];

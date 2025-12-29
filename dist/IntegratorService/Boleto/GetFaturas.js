@@ -57,6 +57,7 @@ class GetFaturas {
     }
 
     if (listInvoices.length > 0) {
+      // eslint-disable-next-line array-callback-return
       listInvoices.map(invoice => {
         const extratosFatura = listExtracts.filter(item => item.codfat === invoice.codfat);
 

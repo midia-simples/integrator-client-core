@@ -18,6 +18,7 @@ import Radius from './resources/Radius';
 import PhonePlan from './resources/PhonePlan';
 import PhoneExpiration from './resources/PhoneExpiration';
 import PhoneExtract from './resources/PhoneExtract';
+import Credits from './resources/Credits';
 
 export default {
   Bill,
@@ -40,4 +41,5 @@ export default {
   PhonePlan,
   PhoneExpiration,
   PhoneExtract,
+  Credits,
 };
