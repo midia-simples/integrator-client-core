@@ -4,7 +4,9 @@ import Integrator from '~/API/Integrator';
 import dateToBR from '~/util/dateToBR';
 
 class GetFaturas {
-  async run({ codcli, codsercli, from, to }) {
+  async run({
+    codcli, codsercli, from, to,
+  }) {
     const toSelected = to || addMonths(new Date(), 6);
     const fromSelected = from || subYears(new Date(), 2);
 
@@ -40,6 +42,7 @@ class GetFaturas {
     }
 
     if (listInvoices.length > 0) {
+      // eslint-disable-next-line array-callback-return
       listInvoices.map((invoice) => {
         const extratosFatura = listExtracts.filter(
           (item) => item.codfat === invoice.codfat,
